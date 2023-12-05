@@ -1,0 +1,45 @@
+#about-me {
+    text-align: center;
+    background-color: black;
+}
+#about-me-sub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#profile-pic-abt {
+    background-color: goldenrod;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 50%;
+    /*TODO: Get rid of border*/
+}
+h1 {
+    color: rgb(231, 25, 18);
+}
+#abt-me-socials {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    background-color: rgba(10, 10, 0, 0.3);
+    border-radius: 50px;
+    padding: 2vh;
+    height: 5vh;
+    width: 40vh;
+}
+#abt-me-socials > a {
+    display: inline;
+    background-color: black;
+    height: 5vh;
+    width: 5vh;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.abt-me-social-logo {
+    background-color: black;
+    width: 69%;
+    height: 69%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

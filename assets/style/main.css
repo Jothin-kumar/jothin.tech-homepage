@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+body > div {
+    height: 100vh;
+}
+* {
+    user-select: none;
+}
+@keyframes zoom-in {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.1;
+    }
+}
+@keyframes zoom-out {
+    0% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
