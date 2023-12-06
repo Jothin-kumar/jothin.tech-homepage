@@ -18,12 +18,21 @@
     grid-template-columns: auto auto;
     text-align: center;
 }
+@keyframes navbar {
+    0%, 100% {
+        background-color: rgba(50, 150, 69, 0.95);
+        border: rgb(20, 75, 35) 3px solid;
+    }
+    50% {
+        background-color: rgba(50, 85, 150, 0.95);
+        border: rgb(50, 85, 150) 3px solid;
+    }
+}
 .fix-navbar {
     position: sticky;
     top: 1vh;
     width: fit-content;
-    background-color: rgba(50, 150, 69, 0.95) !important;
-    border: rgb(20, 75, 35) 3px solid;
+    animation: navbar infinite 120s;
 }
 #navbar > div {
     height: fit-content;
