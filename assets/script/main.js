@@ -45,10 +45,10 @@ function configureZoomEffect(elem) {
     })
 }
 function scrollToMyWorks() {
-    const myWorks = document.getElementById("my-works");
-    for (let i = 0; i*5 < myWorks.scrollHeight; i++) {
+    const abt = document.getElementById("about-me");
+    for (let i = (window.scrollY - (window.scrollY % 5)) / 5; i*5 < abt.scrollHeight; i++) {
         setTimeout(() => {
             window.scrollTo(0, i*5);
-        }, i*2);
+        }, i*3);
     }
 }

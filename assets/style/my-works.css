@@ -1,3 +1,22 @@
 #my-works {
-    
+    width: fit-content;
+    height: fit-content !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+#navbar {
+    width: 50vw;
+    height: 5vw;
+    background-color: rgba(50, 150, 69, 0.25);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5vw;
+    margin-top: 1vh;
+}
+.fix-navbar {
+    position: sticky;
+    top: 1vh;
+    left: 50%;
+    background-color: rgba(50, 150, 69, 0.6) !important;
+    border: rgb(50, 150, 69) 2px solid;
 }
