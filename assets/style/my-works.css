@@ -32,7 +32,7 @@
     position: sticky;
     top: 1vh;
     width: fit-content;
-    animation: navbar infinite 120s;
+    animation: navbar infinite 300s;
 }
 #navbar > div {
     height: fit-content;
