@@ -1,15 +1,19 @@
 function bodyLoadedAbt() {
     const abt = document.getElementById("about-me");
-    let p = 0;
+    let p = window.scrollY;
     const handler = () => {
         if (abt.scrollHeight > window.scrollY > p) { // If scrolled down
             scrollToMyWorks();
             window.removeEventListener("scrollend", handler);
-            setTimeout(() => {
-                window.addEventListener("scrollend", handler);
-            }, 3000)
+            window.addEventListener("scrollend", handler2);
         }
         p = window.scrollY;
     }
-    window.addEventListener("scrollend", handler)
+    const handler2 = () => {
+        if (abt.scrollHeight > window.scrollY) {
+            window.removeEventListener("scrollend", handler2);
+            window.addEventListener("scrollend", handler);
+        }
+    }
+    window.addEventListener("scrollend", handler);
 }
