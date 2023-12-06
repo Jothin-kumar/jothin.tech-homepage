@@ -2,7 +2,7 @@ function bodyLoadedAbt() {
     const abt = document.getElementById("about-me");
     let p = window.scrollY;
     const handler = () => {
-        if (abt.scrollHeight > window.scrollY > p) { // If scrolled down
+        if (window.scrollY > p) { // If scrolled down
             scrollToMyWorks();
             window.removeEventListener("scrollend", handler);
             window.addEventListener("scrollend", handler2);
