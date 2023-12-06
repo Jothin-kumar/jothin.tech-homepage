@@ -20,15 +20,25 @@ function bodyLoaded() {
     }
 }
 function configureZoomEffect(elem) {
-    elem.addEventListener("mouseenter", () => {
-        setTimeout(() => {
-            elem.style.animation = "zoom-in .5s forwards";
-        }, 100);
+    const throttle = 500;
+    // e for enter; l for leave.
+    let prevTimeStampe = 0;
+    elem.addEventListener("mouseenter", (evt) => {
+        if (evt.timeStamp - prevTimeStampe > throttle) {
+            setTimeout(() => {
+                elem.style.animation = "zoom-in .5s forwards";
+           }, 100);
+        }
+        prevTimeStampe = evt.timeStamp;
     })
-    elem.addEventListener("mouseleave", () => {
-        setTimeout(() => {
-            elem.style.animation = "zoom-out 1s forwards";
-        }, 500)
+    let prevTimeStampl = 0;
+    elem.addEventListener("mouseleave", (evt) => {
+        if (evt.timeStamp - prevTimeStampl > throttle) {
+            setTimeout(() => {
+                elem.style.animation = "zoom-out 1s forwards";
+            }, 100);
+        }
+        prevTimeStampl = evt.timeStamp;
     })
 }
 function scrollToMyWorks() {
