@@ -46,9 +46,10 @@ function configureZoomEffect(elem) {
 }
 function scrollToMyWorks() {
     const abt = document.getElementById("about-me");
-    for (let i = (window.scrollY - (window.scrollY % 5)) / 5; i*5 < abt.scrollHeight; i++) {
+    const s = (window.scrollY - (window.scrollY % 5)) / 5;
+    for (let i = s; i*5 < abt.scrollHeight; i++) {
         setTimeout(() => {
             window.scrollTo(0, i*5);
-        }, i*3);
+        }, (i-s)*3);
     }
 }
