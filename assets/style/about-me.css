@@ -9,8 +9,8 @@
     transform: translate(-50%, -50%);
 }
 #profile-pic-abt {
-    min-width: 300px;
-    min-height: 300px;
+    min-width: 150px;
+    min-height: 150px;
     width: 30vh;
     height: 30vh;
     border-radius: 50%;

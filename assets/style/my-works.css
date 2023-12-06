@@ -5,8 +5,9 @@
     margin-right: auto;
 }
 #navbar {
-    width: 50vw;
+    width: 60vw;
     height: 5vw;
+    min-height: 6vh;
     background-color: rgba(50, 150, 69, 0.25);
     margin-left: auto;
     margin-right: auto;
@@ -16,7 +17,7 @@
 .fix-navbar {
     position: sticky;
     top: 1vh;
-    left: 50%;
-    background-color: rgba(50, 150, 69, 0.6) !important;
-    border: rgb(50, 150, 69) 2px solid;
+    width: fit-content;
+    background-color: rgba(50, 150, 69, 0.95) !important;
+    border: rgb(20, 75, 35) 3px solid;
 }
