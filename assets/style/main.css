@@ -4,6 +4,7 @@ body {
     display: grid;
     grid-template-rows: auto auto;
     scroll-behavior: smooth;
+    margin: 0;
 }
 body > div {
     height: 100vh;

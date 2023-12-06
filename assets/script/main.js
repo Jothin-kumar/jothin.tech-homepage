@@ -5,6 +5,19 @@ function bodyLoaded() {
     for (let i = 0; i < socials.length; i++) {
         configureZoomEffect(socials[i]);
     }
+
+    // Autoscroll
+    autoscroll = setTimeout(() => {
+        scrollToMyWorks();
+    }, 10000);
+    window.addEventListener("scroll", () => {
+        clearTimeout(autoscroll);
+    })
+    for (let i = 0; i < socials.length; i++) {
+        socials[i].addEventListener("mouseover", () => {
+            clearTimeout(autoscroll);
+        });
+    }
 }
 function configureZoomEffect(elem) {
     elem.addEventListener("mouseenter", () => {
@@ -18,12 +31,11 @@ function configureZoomEffect(elem) {
         }, 500)
     })
 }
-function exploreMyWorksButton() {
+function scrollToMyWorks() {
     const myWorks = document.getElementById("my-works");
     for (let i = 0; i*5 < myWorks.scrollHeight; i++) {
         setTimeout(() => {
             window.scrollTo(0, i*5);
-        }, i);
+        }, i*2);
     }
-    window.scrollTo(0, myWorks.scrollHeight);
 }
