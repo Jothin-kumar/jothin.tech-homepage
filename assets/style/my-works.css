@@ -1,18 +1,22 @@
 #my-works {
     width: fit-content;
+    min-height: 100vh;
     height: fit-content !important;
     margin-left: auto;
     margin-right: auto;
 }
+
 #navbar {
     width: 60vw;
     height: 5vw;
-    min-height: 6vh;
     background-color: rgba(50, 150, 69, 0.25);
     margin-left: auto;
     margin-right: auto;
     border-radius: 5vw;
     margin-top: 1vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
 }
 .fix-navbar {
     position: sticky;
@@ -20,4 +24,27 @@
     width: fit-content;
     background-color: rgba(50, 150, 69, 0.95) !important;
     border: rgb(20, 75, 35) 3px solid;
+}
+#navbar > div {
+    height: fit-content;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#navbar p {
+    font-size: x-large;
+}
+.my-works-social-logo {
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+@media screen and (max-width: 1000px) {
+    #navbar {
+        width: 85vw;
+        height: 10vw;
+    }
+    .my-works-social-logo {
+        margin-right: 1vh;
+        margin-left: 1vh;
+    }
 }
