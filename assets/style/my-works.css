@@ -15,7 +15,7 @@
     border-radius: 5vw;
     margin-top: 1vh;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     text-align: center;
 }
 @keyframes navbar {
@@ -56,4 +56,25 @@
         margin-right: 1vh;
         margin-left: 1vh;
     }
+}
+#navbar-search {
+    display: flex;
+}
+#navbar-search > * {
+    border: 0;
+    background-color: inherit;
+    outline: none;
+}
+#navbar-search > button {
+    width: fit-content;
+}
+#navbar-search > input {
+    border-bottom: wheat 1px solid;
+    width: 10vw;
+    color: white;
+    flex-grow: 1;
+    font-size: large;
+}
+#navbar-search > input::placeholder {
+    color: white;
 }
