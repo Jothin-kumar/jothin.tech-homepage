@@ -14,8 +14,9 @@
     width: 30vh;
     height: 30vh;
     border-radius: 50%;
-    border: rgba(89, 243, 59, 0.3) 5px solid;
+    border: rgba(13, 0, 126, 0.3) 2px solid;
     margin-bottom: 2vh;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 h1 {
     color: rgb(231, 25, 18);
