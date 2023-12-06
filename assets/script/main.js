@@ -18,6 +18,9 @@ function bodyLoaded() {
             clearTimeout(autoscroll);
         });
     }
+
+    // Prevent right click.
+    window.addEventListener("contextmenu", (evt) => {evt.preventDefault()});
 }
 function configureZoomEffect(elem) {
     const throttle = 500;
