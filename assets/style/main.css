@@ -3,6 +3,7 @@ body {
     color: white;
     display: grid;
     grid-template-rows: auto auto;
+    scroll-behavior: smooth;
 }
 body > div {
     height: 100vh;

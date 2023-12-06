@@ -15,9 +15,12 @@
     height: 30vh;
     border-radius: 50%;
     border: rgba(89, 243, 59, 0.3) 5px solid;
+    margin-bottom: 2vh;
 }
 h1 {
     color: rgb(231, 25, 18);
+    font-size: 3rem;
+    margin-bottom: 2vh;
 }
 #abt-me-socials {
     display: inline-grid;
@@ -27,6 +30,7 @@ h1 {
     padding: 2vh;
     height: 5vh;
     width: 40vh;
+    margin-bottom: 2vh;
 }
 #abt-me-socials > a {
     display: inline;
@@ -44,4 +48,17 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
+}
+#explore-my-works-btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: rgba(15, 23, 143, 0.1);
+    border: rgba(0, 7, 65, 0.5) 1px solid;
+    color: aliceblue;
+}
+#explore-my-works-btn:hover {
+    background-color: rgba(36, 143, 15, 0.1);
+    border: rgba(0, 65, 3, 0.5) 1px solid;
+    cursor: pointer;
 }
