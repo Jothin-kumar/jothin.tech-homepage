@@ -7,9 +7,13 @@ function bodyLoaded() {
 }
 function configureZoomEffect(elem) {
     elem.addEventListener("mouseenter", () => {
-        elem.style.animation = "zoom-in .5s forwards";
+        setTimeout(() => {
+            elem.style.animation = "zoom-in .5s forwards";
+        }, 100);
     })
     elem.addEventListener("mouseleave", () => {
-        elem.style.animation = "zoom-out 1s forwards";
+        setTimeout(() => {
+            elem.style.animation = "zoom-out 1s forwards";
+        }, 500)
     })
 }

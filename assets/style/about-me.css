@@ -9,11 +9,12 @@
     transform: translate(-50%, -50%);
 }
 #profile-pic-abt {
-    background-color: goldenrod;
-    min-width: 200px;
-    min-height: 200px;
+    min-width: 300px;
+    min-height: 300px;
+    width: 30vh;
+    height: 30vh;
     border-radius: 50%;
-    /*TODO: Get rid of border*/
+    border: rgba(89, 243, 59, 0.3) 5px solid;
 }
 h1 {
     color: rgb(231, 25, 18);
@@ -42,4 +43,5 @@ h1 {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 50%;
 }
