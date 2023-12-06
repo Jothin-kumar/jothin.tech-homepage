@@ -28,26 +28,24 @@ h1 {
     background-color: rgba(10, 10, 0, 0.1);
     border-radius: 50px;
     padding: 2vh;
-    height: 5vh;
-    width: 40vh;
+    height: 6vh;
+    width: 45vh;
     margin-bottom: 2vh;
 }
 #abt-me-socials > a {
     display: inline;
     background-color: black;
-    height: 5vh;
-    width: 5vh;
+    height: 6vh;
+    width: 6vh;
     overflow: hidden;
     border-radius: 50%;
 }
 .abt-me-social-logo {
     background-color: black;
-    width: 69%;
-    height: 69%;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    border-radius: 50%;
+    color: white;
 }
 #explore-my-works-btn {
     padding: 10px;
