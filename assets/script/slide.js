@@ -1,3 +1,9 @@
+function bodyLoadedSlides() {
+    window.addEventListener("touchstart", ()=> {
+        document.getElementById("slides-here").classList.add("strict-no-opacity");
+    })
+}
+
 let slides = [];
 
 function modulus(n) {

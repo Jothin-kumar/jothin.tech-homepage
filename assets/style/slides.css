@@ -6,6 +6,9 @@
     padding: 1.5vw;
     min-height: 100vh;
 }
+.strict-no-opacity, .strict-no-opacity *{
+    opacity: 1 !important;
+}
 
 .slide {
     background-color: black;
@@ -27,7 +30,6 @@
         grid-template-columns: none !important;
         grid-template-rows: auto auto;
         height: 85vh;
-        opacity: 1 !important;
     }
 }
 .slide-left, .slide-right {
