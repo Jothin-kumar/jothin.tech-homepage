@@ -3,7 +3,7 @@
     margin-top: 2vh;
     border-radius: 15px;
     width: 85vw;
-    padding: 2.5vw;
+    padding: 1.5vw;
     min-height: 100vh;
 }
 .slide {
@@ -12,11 +12,8 @@
     min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2vh;
     margin-bottom: 2vh;
     border-radius: 10px;
-    border: green 1px solid;
-    box-shadow: 0 0 15px green;
 }
 .slide:hover {
     opacity: 1 !important;

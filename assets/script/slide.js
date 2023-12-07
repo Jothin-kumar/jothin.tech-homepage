@@ -15,3 +15,9 @@ window.addEventListener("mousemove", (evt)=> {
         slide.style.opacity = (slide.scrollHeight/y)/5;
     }
 })
+
+function addSlide() {
+    const slide = document.createElement("div");
+    slide.classList.add("slide");
+    document.getElementById("slides-here").appendChild(slide);
+}
