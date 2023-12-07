@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
         //"border-color": "white",
         "shadow-color": "white",
         "name": "Geometry App",
-        "image-src": "assets/images/test-img.png",
+        "image-src": "https://cdn.jothin.tech/img/Geometry-app.webp",
         "url": "https://joth.in",
         "GitHub-url": "https://github.com/Jothin-Kumar/Geometry-app",
         "description": `
