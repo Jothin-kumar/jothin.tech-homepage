@@ -12,6 +12,10 @@ body > div {
 * {
     user-select: none;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
 @keyframes zoom-in {
     0% {
         scale: 1;

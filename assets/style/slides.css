@@ -6,15 +6,85 @@
     padding: 1.5vw;
     min-height: 100vh;
 }
+
 .slide {
     background-color: black;
     width: 85vw;
-    min-height: 100vh;
+    height: 90vh;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow: hidden;
 }
 .slide:hover {
     opacity: 1 !important;
+}
+@media screen and (max-width: 1250px) {
+    .slide {
+        grid-template-columns: none !important;
+        grid-template-rows: auto auto;
+        height: 85vh;
+        opacity: 1 !important;
+    }
+}
+.slide-left, .slide-right {
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+@media screen and (max-width: 1250px) {
+    .slide-left, .slide-right {
+        width: unset !important;
+        height: 40vh;
+    }
+}
+
+.slide-left {
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+.slide-left > img {
+    max-height: 40vh;
+    max-width: 40vw;
+}
+.links-slide {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    min-width: 50%;
+}
+.visit-work, .gh-work {
+    border: white 1px solid;
+    margin: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+.visit-work:hover, .gh-work:hover {
+    background-color: rgba(0, 255, 255, 0.05);
+}
+
+.slide-right {
+    overflow-y: scroll;
+}
+@media screen and (min-width: 1250px) {
+    .slide-right-content {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+.slide-right-content {
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
