@@ -9,13 +9,22 @@ function bodyLoaded() {
     // Autoscroll
     autoscroll = setTimeout(() => {
         scrollToMyWorks();
-    }, 10000);
+    }, 5000);
+    mouseMoveDetect = () => {
+        clearTimeout(autoscroll);
+        autoscroll = setTimeout(() => {
+            scrollToMyWorks();
+        }, 5000);
+    }
+    window.addEventListener("mousemove", mouseMoveDetect);
     window.addEventListener("scroll", () => {
         clearTimeout(autoscroll);
+        window.removeEventListener("mousemove", mouseMoveDetect);
     })
     for (let i = 0; i < socials.length; i++) {
         socials[i].addEventListener("mouseover", () => {
             clearTimeout(autoscroll);
+            window.removeEventListener("mousemove", mouseMoveDetect);
         });
     }
 
