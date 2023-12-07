@@ -25,7 +25,7 @@
 .slide:hover {
     opacity: 1 !important;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (orientation: portrait) {
     .slide {
         grid-template-columns: none !important;
         grid-template-rows: auto auto;
@@ -39,7 +39,7 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (orientation: portrait) {
     .slide-left, .slide-right {
         width: unset !important;
         height: 40vh;
@@ -60,7 +60,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (orientation: portrait) {
     .slide-left > img {
         max-height: 50vh;
         max-width: 60vw;
@@ -89,7 +89,7 @@
 .slide-right {
     overflow-y: scroll;
 }
-@media screen and (min-width: 1250px) {
+@media screen and (orientation: landscape) {
     .slide-right-content {
         position: relative;
         top: 50%;
