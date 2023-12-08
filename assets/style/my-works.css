@@ -9,7 +9,7 @@
 #navbar {
     width: 60vw;
     height: 5vw;
-    background-color: rgba(50, 150, 69, 0.25);
+    animation: navbar infinite 300s;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5vw;
@@ -33,7 +33,6 @@
     position: sticky;
     top: 1vh;
     width: fit-content;
-    animation: navbar infinite 300s;
 }
 #navbar > div {
     height: fit-content;
