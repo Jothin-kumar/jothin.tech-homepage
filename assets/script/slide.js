@@ -73,29 +73,49 @@ function addSlide(data) {
     document.getElementById("slides-here").appendChild(slide);
 }
 
-// Test
-window.addEventListener("load", () => {
-    addSlide({
-        //"border-color": "white",
-        "shadow-color": "white",
-        "name": "Geometry App",
-        "image-src": "https://cdn.jothin.tech/img/Geometry-app.webp",
-        "url": "https://joth.in",
-        "GitHub-url": "https://github.com/Jothin-Kumar/Geometry-app",
-        "description": `
-        <h3>Test heading</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi non incidunt ipsa ex reiciendis, consectetur assumenda odio aperiam soluta dolore dolorem adipisci vel voluptatibus, blanditiis modi commodi deleniti id voluptates!</p>
-        <br>
-        <h3>Test heading</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi non incidunt ipsa ex reiciendis, consectetur assumenda odio aperiam soluta dolore dolorem adipisci vel voluptatibus, blanditiis modi commodi deleniti id voluptates!</p>
-        `,
-    });
-    addSlide({
-        "border-color": "gold",
-        //"shadow-color": "gold",
-    });
-    addSlide({
-        "border-color": "red",
-        "shadow-color": "red",
-    });
+const slidesBaseURL = "/slides/{id}.json";
+window.canAddNewSlide = true;
+window.nextSlide = "init";
+async function fetchSlide(slideID, callback) {
+    window.canAddNewSlide = false;
+    const url = slidesBaseURL.replace("{id}", slideID);
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            callback(false);
+        }
+        else {
+            response.json().then((data) =>{
+                callback(data);
+            })
+        }
+    }
+    catch {
+        callback(false);
+    }
+}
+function slideCallback(r) {
+    if (r) {
+        addSlide(r["slide"]);
+        window.nextSlide = r["next"];
+        window.canAddNewSlide = true;
+    }
+    else {
+        console.log("Problem");
+    }
+}
+function spawnNewSlide() {
+    if (window.nextSlide){
+        if (window.canAddNewSlide) {
+            fetchSlide(window.nextSlide, slideCallback);
+        }
+    }
+    else {
+        document.getElementById("slides-loader").style.display = "none";
+    }
+}
+window.addEventListener("scrollend", () => {
+    if (document.getElementById("slides-loader").getBoundingClientRect().bottom < window.innerHeight) {
+        spawnNewSlide();
+    }
 })
