@@ -102,3 +102,10 @@
     margin-left: 1vw;
     margin-right: 1vw;
 }
+
+#error-loading-slide {
+    display: none;
+    color: red;
+    font-size: large;
+    text-align: center;
+}
