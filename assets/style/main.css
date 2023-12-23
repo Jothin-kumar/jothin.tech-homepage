@@ -32,3 +32,10 @@ a {
         scale: 1;
     }
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+* {
+    scrollbar-width: none;
+}
