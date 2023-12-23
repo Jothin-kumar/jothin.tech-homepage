@@ -19,7 +19,13 @@ window.addEventListener("mousemove", (evt)=> {
     for (let i = 0; i < slides.length; i++) {
         slide = slides[i];
         y = modulus(evt.pageY - slide.offsetTop - (slide.scrollHeight / 2));
-        slide.style.opacity = (slide.scrollHeight/y)/5;
+        slide.style.opacity = (slide.scrollHeight/y)/2;
+    }
+});
+window.addEventListener("scroll", () => {
+    const slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 1;
     }
 })
 
