@@ -54,13 +54,9 @@ function configureZoomEffect(elem) {
     })
 }
 function scrollToMyWorks() {
-    const abt = document.getElementById("about-me");
-    const s = (window.scrollY - (window.scrollY % 5)) / 5;
-    for (let i = s; i*5 < abt.scrollHeight; i++) {
-        setTimeout(() => {
-            window.scrollTo(0, i*5);
-        }, (i-s)*3);
-    }
+    window.scrollBoost = false;
+    window.addEventListener("scrollend", () => {window.scrollBoost = true;})
+    document.getElementById("my-works").scrollIntoView({behavior: "smooth"});
 }
 
 window.addEventListener("keydown", (evt) => {
