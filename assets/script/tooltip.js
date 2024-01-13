@@ -8,12 +8,12 @@ function enableTooltip(elem) {
             window.tooltip.style.marginTop = Math.round(window.scrollY + client.bottom).toString() + "px";
             const elemWidth = client.right - client.left;
             let marginLeft = window.scrollX + client.left + elemWidth/2;
-            console.log(marginLeft + elemWidth, screen.width)
+            const ttClient = window.tooltip.getBoundingClientRect();
             if (marginLeft < elemWidth) {
                 marginLeft = client.right + 10;
             }
-            else if (marginLeft + elemWidth > screen.width - 50) {
-                marginLeft -= elemWidth;
+            else if (marginLeft + (ttClient.right - ttClient.left)/2 > screen.width - 50) {
+                marginLeft -= (ttClient.right - ttClient.left)/2;
             }
             window.tooltip.style.marginLeft = marginLeft.toString() + "px";
         }, 100);
