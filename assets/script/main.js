@@ -27,6 +27,10 @@ function bodyLoaded() {
             window.removeEventListener("mousemove", mouseMoveDetect);
         });
     }
+    document.getElementById("profile-pic-abt").addEventListener("mouseover", () => {
+        clearTimeout(autoscroll);
+        window.removeEventListener("mousemove", mouseMoveDetect);
+    });
 
     // Prevent right click.
     window.addEventListener("contextmenu", (evt) => {evt.preventDefault()});
