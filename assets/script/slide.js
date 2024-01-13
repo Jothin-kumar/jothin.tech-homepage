@@ -67,6 +67,8 @@ function addSlide(data) {
     gh.target = "_blank";
     links.appendChild(gh);
     left.appendChild(links);
+    const border = (data["border-color"] || "white") + " 1px solid";
+    visit.style.border = gh.style.border = border;
 
     const right = document.createElement("div");
     right.classList.add("slide-right");

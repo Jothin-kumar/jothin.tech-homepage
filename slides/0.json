@@ -1,9 +1,9 @@
 {
     "slide": {
-        "border-color": "white",
-        "shadow-color": "white",
-        "name": "Geometry App 0",
-        "image-src": "https://cdn.jothin.tech/img/Geometry-app.webp",
+        "border-color": "#29020a",
+        "shadow-color": "",
+        "name": "Sample 1",
+        "image-src": "/assets/images/test-img-2.jpg",
         "url": "https://joth.in",
         "GitHub-url": "https://github.com/Jothin-Kumar/Geometry-app",
         "description": "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi non incidunt ipsa ex reiciendis, consectetur assumenda odio aperiam soluta dolore dolorem adipisci vel voluptatibus, blanditiis modi commodi deleniti id voluptates!</p>"
