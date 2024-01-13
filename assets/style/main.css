@@ -11,6 +11,7 @@ body > div {
 }
 * {
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 a {
     text-decoration: none;
