@@ -9,10 +9,9 @@
     transform: translate(-50%, -50%);
 }
 #profile-pic-abt {
-    min-width: 150px;
-    min-height: 150px;
-    width: 30vh;
-    height: 30vh;
+
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     border: rgba(13, 0, 126, 0.3) 2px solid;
     margin-bottom: 2vh;
@@ -20,7 +19,7 @@
 }
 h1 {
     color: rgb(231, 25, 18);
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 2vh;
 }
 #abt-me-socials {
@@ -29,7 +28,7 @@ h1 {
     background-color: rgba(10, 10, 0, 0.1);
     border-radius: 50px;
     padding: 2vh;
-    height: 6vh;
+    height: fit-content;
     width: 45vh;
     margin-bottom: 2vh;
 }
@@ -51,7 +50,7 @@ h1 {
 #explore-my-works-btn {
     padding: 10px;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: rgba(15, 23, 143, 0.1);
     border: rgba(0, 7, 65, 0.5) 1px solid;
     color: aliceblue;
