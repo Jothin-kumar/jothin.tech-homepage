@@ -1,4 +1,4 @@
-const scrollBoost = 1.5;
+const scrollBoost = 3;
 
 function bodyLoadedAbt() {
     const abt = document.getElementById("about-me");
