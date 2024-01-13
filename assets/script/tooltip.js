@@ -6,7 +6,16 @@ function enableTooltip(elem) {
             window.tooltip.style.display = "block";
             const client = elem.getBoundingClientRect();
             window.tooltip.style.marginTop = Math.round(window.scrollY + client.bottom).toString() + "px";
-            window.tooltip.style.marginLeft = Math.round(window.scrollX + client.left + (client.right - client.left)/2).toString() + "px";
+            const elemWidth = client.right - client.left;
+            let marginLeft = window.scrollX + client.left + elemWidth/2;
+            console.log(marginLeft + elemWidth, screen.width)
+            if (marginLeft < elemWidth) {
+                marginLeft = client.right + 10;
+            }
+            else if (marginLeft + elemWidth > screen.width - 50) {
+                marginLeft -= elemWidth;
+            }
+            window.tooltip.style.marginLeft = marginLeft.toString() + "px";
         }, 100);
     });
     elem.addEventListener("mouseleave", () => {
