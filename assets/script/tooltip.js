@@ -19,17 +19,14 @@ function enableTooltip(elem) {
 
 function tooltipBodyLoaded() {
     window.tooltip = document.createElement("p");
-    window.tooltip.style = `
-    display: none;
-    position: absolute;
-    color: aliceblue;
-    background-color: #051209;
-    padding: 10px;
-    border-radius: 5px;
-    transform: translateX(-50%);
-    z-index: 2;
-    `;
+    window.tooltip.id = "tooltip";
     document.body.appendChild(window.tooltip);
+    window.addEventListener("scroll", () => {
+        window.tooltip.classList.add("no-display-strict");
+    });
+    window.addEventListener("scrollend", () => {
+        window.tooltip.classList.remove("no-display-strict");
+    });
 
     const links = document.getElementsByTagName("a");
     for (let i = 0; i < links.length; i++) {
