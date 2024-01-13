@@ -25,7 +25,10 @@ function tooltipBodyLoaded() {
         window.tooltip.classList.add("no-display-strict");
     });
     window.addEventListener("scrollend", () => {
-        window.tooltip.classList.remove("no-display-strict");
+        window.addEventListener("mousemove", () => {
+            window.tooltip.classList.remove("no-display-strict");
+            window.removeEventListener("mousemove", this);
+        })
     });
 
     const links = document.getElementsByTagName("a");
