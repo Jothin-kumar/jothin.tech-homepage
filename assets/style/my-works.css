@@ -61,6 +61,13 @@
     .my-works-social-logo {
         margin: 2vh;
     }
+
+    #navbar.scrolled-down {
+        grid-template-rows: auto auto !important;
+    }
+    #navbar.scrolled-down > #navbar-search, #navbar.scrolled-down > #my-works-socials {
+        display: none;
+    }
 }
 #navbar-search {
     display: flex;
