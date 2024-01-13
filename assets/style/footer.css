@@ -11,3 +11,9 @@ footer {
         height: 20em;
     }
 }
+
+footer > p {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
