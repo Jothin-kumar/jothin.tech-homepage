@@ -62,3 +62,9 @@ function scrollToMyWorks() {
         }, (i-s)*3);
     }
 }
+
+window.addEventListener("keydown", (evt) => {
+    if (evt.key === "Tab") {
+        evt.preventDefault();
+    }
+})
