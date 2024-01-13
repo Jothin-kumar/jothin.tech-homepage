@@ -87,3 +87,6 @@
 #navbar-search > input::placeholder {
     color: white;
 }
+#navbar-search > input::selection {
+    background-color: black;
+}
