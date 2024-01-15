@@ -7,7 +7,7 @@ function bodyLoadedAbt() {
     const handler = () => {
         if (window.scrollY > p & window.scrollBoost) { // If scrolled down
             let y = p + (window.scrollY - p)*scrollBoost;
-            window.scroll(window.scrollX, y < abt.scrollHeight ? y: abt.scrollHeight);
+            window.scrollTo(window.scrollX, y < abt.scrollHeight ? y: abt.scrollHeight);
             window.removeEventListener("scroll", handler);
             window.addEventListener("scroll", handler2);
             if (y > abt.scrollHeight) {
