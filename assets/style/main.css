@@ -12,6 +12,7 @@ body > div {
 * {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    overflow-anchor: none;
 }
 a {
     text-decoration: none;
