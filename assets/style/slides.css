@@ -5,6 +5,8 @@
     width: 85vw;
     padding: 1.5vw;
     min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 .strict-no-opacity, .strict-no-opacity *{
     opacity: 1 !important;
@@ -29,7 +31,7 @@
     .slide {
         grid-template-columns: none !important;
         grid-template-rows: auto auto;
-        height: 85vh;
+        height: fit-content;
     }
 }
 .slide-left, .slide-right {
@@ -41,8 +43,8 @@
 }
 @media screen and (orientation: portrait) {
     .slide-left, .slide-right {
-        width: unset !important;
-        height: 40vh;
+        width: fit-content;
+        min-height: 25vh;
     }
 }
 
@@ -62,8 +64,8 @@
 }
 @media screen and (orientation: portrait) {
     .slide-left > img {
-        max-height: 50vh;
-        max-width: 60vw;
+        max-height: 40vh;
+        max-width: 80vw;
     }
 }
 .links-slide {
