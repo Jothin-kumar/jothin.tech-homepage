@@ -28,6 +28,7 @@ function bodyLoadedSearch() {
     const maxChars = 25;
     input.addEventListener("keydown", (evt) => {
         if (evt.key === "Enter" && input.value && input.value.length <= maxChars) {
+            input.value = input.value.trim();
             displaySearch();
             document.getElementById("searching-msg").innerText = `Searching for '${input.value}'`;
         }
