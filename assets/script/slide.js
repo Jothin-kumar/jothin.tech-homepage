@@ -117,10 +117,10 @@ async function fetchSlide(slideID, callback) {
 }
 function slideCallback(r) {
     const errorLoadingSlide = document.getElementById("error-loading-slide");
+    window.canAddNewSlide = true;
     if (r) {
         addSlide(r["slide"]);
         window.nextSlide = r["next"];
-        window.canAddNewSlide = true;
         errorLoadingSlide.style.display = "none";
     }
     else {
