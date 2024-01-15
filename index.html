@@ -93,6 +93,13 @@
                     <div class="l-dot l-dot3"></div>
                 </div>
                 <button id="close-search" onclick="hideSearch();">X</button>
+                <div id="search-with">
+                    <p>Or, Search with</p>
+                    <div>
+                        <p onclick="window.open(`https://www.google.com/search?q=${document.getElementById('navbar-search-input').value}+site:jothin.tech+OR+site:joth.in`, '_blank');">Google</p>
+                        <p onclick="window.open(`https://github.com/search?q=${document.getElementById('navbar-search-input').value}+user%3AJothin-kumar&type=Repositories`, '_blank');">GitHub</p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
