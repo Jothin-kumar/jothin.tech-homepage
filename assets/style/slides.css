@@ -106,8 +106,10 @@
     }
 }
 .slide-right-content {
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: rgba(255, 255, 255, .69);
+    font-weight: 100;
 }
 
 #error-loading-slide {
