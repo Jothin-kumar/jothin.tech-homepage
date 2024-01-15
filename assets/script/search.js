@@ -1,6 +1,7 @@
 function displaySearch() {
     document.getElementById("search-parent").style.display = "block";
     document.body.style.overflow = "hidden";
+    loading();
 }
 function hideSearch() {
     document.getElementById("search-parent").style.display = "none";
@@ -51,7 +52,32 @@ function bodyLoadedSearch() {
 
 function loading() {
     document.getElementById("search-loader").style.display = "block";
+    document.getElementById("search-results").style.display = "none";
 }
 function loaded() {
     document.getElementById("search-loader").style.display = "none";
+    document.getElementById("search-results").style.display = "block";
+}
+
+function displaySearchResults(query, results) {
+    document.getElementById("search-results-found").innerHTML = `${results.length} result(s) found for <br> '${query}'.`;
+    document.querySelector("#search-results > div").innerHTML = "";
+    for (let i = 0; i < results.length; i++) {
+        const r = document.createElement("div");
+        r.classList.add("result");
+        const rt = document.createElement("p");
+        rt.classList.add("result-title");
+        rt.innerText = results[i]["title"];
+        r.appendChild(rt);
+        const rd = document.createElement("p");
+        rd.classList.add("result-description");
+        rd.innerText = results[i]["description"];
+        r.appendChild(rd);
+        document.querySelector("#search-results > div").appendChild(r);
+
+        r.addEventListener("click", () => {
+            window.open(results[i]["url"]);
+        })
+    }
+    loaded();
 }
