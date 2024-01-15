@@ -61,7 +61,7 @@ function addSlide(data) {
     const links = document.createElement("div");
     links.classList.add("links-slide");
     const visit = document.createElement("p");
-    visit.setAttribute("tooltip", data["url"]);
+    visit.setAttribute("tooltip", data["url"].replace("https://", ""));
     enableTooltip(visit);
     visit.onclick = () => {
         window.open(data["url"], "_blank");
@@ -70,7 +70,7 @@ function addSlide(data) {
     visit.innerText = "Visit";
     links.appendChild(visit);
     const gh = document.createElement("a");
-    gh.setAttribute("tooltip", data["GitHub-url"]);
+    gh.setAttribute("tooltip", data["GitHub-url"].replace("https://github.com/Jothin-Kumar/", ""));
     enableTooltip(gh);
     gh.onclick = () => {
         window.open(data["GitHub-url"], "_blank");

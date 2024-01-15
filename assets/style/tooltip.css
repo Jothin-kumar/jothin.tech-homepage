@@ -11,3 +11,8 @@
 .no-display-strict {
     display: none !important;
 }
+@media screen and (orientation: portrait) {
+    #tooltip {
+        font-size: small;
+    }
+}
