@@ -31,7 +31,7 @@ function bodyLoadedSearch() {
             input.blur();
             input.value = input.value.trim();
             displaySearch();
-            document.getElementById("searching-msg").innerText = `Searching for '${input.value}'`;
+            document.getElementById("searching-msg").innerHTML = `Searching for<br>'${input.value}'`;
         }
     });
     function borderColor() {
