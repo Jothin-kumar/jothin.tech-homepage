@@ -55,7 +55,12 @@
     grid-template-rows: auto auto auto;
 }
 .slide-left > h2 {
-    font-size: 2rem;
+    font-size: medium;
+}
+.slide-left > .links-slide > p {
+    font-size: small;
+    padding: 10px;
+    text-align: center;
 }
 .slide-left > img {
     max-height: 40vh;

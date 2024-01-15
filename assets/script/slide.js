@@ -69,7 +69,7 @@ function addSlide(data) {
     visit.classList.add("visit-work");
     visit.innerText = "Visit";
     links.appendChild(visit);
-    const gh = document.createElement("a");
+    const gh = document.createElement("p");
     gh.setAttribute("tooltip", data["GitHub-url"].replace("https://github.com/Jothin-Kumar/", ""));
     enableTooltip(gh);
     gh.onclick = () => {
@@ -79,7 +79,7 @@ function addSlide(data) {
     gh.innerText = "GitHub";
     links.appendChild(gh);
     left.appendChild(links);
-    const border = (data["border-color"] || "white") + " 1px solid";
+    const border = (data["border-color"] || "white") + " 2px solid";
     visit.style.border = gh.style.border = border;
 
     const right = document.createElement("div");
