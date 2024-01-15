@@ -43,6 +43,9 @@ function addSlide(data) {
     left.classList.add("slide-left");
     if (data["image-src"]) {
         const img = document.createElement("img");
+        img.onclick = () => {
+            window.open(data["url"], "_blank");
+        }
         img.src = data["image-src"];
         left.appendChild(img);
         if (data["border-color"]) {
@@ -51,20 +54,29 @@ function addSlide(data) {
     }
     const name = document.createElement("h2");
     name.innerText = data["name"];
+    name.onclick = () => {
+        window.open(data["url"], "_blank");
+    }
     left.appendChild(name);
     const links = document.createElement("div");
     links.classList.add("links-slide");
-    const visit = document.createElement("a");
+    const visit = document.createElement("p");
+    visit.setAttribute("tooltip", data["url"]);
+    enableTooltip(visit);
+    visit.onclick = () => {
+        window.open(data["url"], "_blank");
+    }
     visit.classList.add("visit-work");
     visit.innerText = "Visit";
-    visit.href = data["url"];
-    visit.target = "_blank";
     links.appendChild(visit);
     const gh = document.createElement("a");
+    gh.setAttribute("tooltip", data["GitHub-url"]);
+    enableTooltip(gh);
+    gh.onclick = () => {
+        window.open(data["GitHub-url"], "_blank");
+    }
     gh.classList.add("gh-work");
     gh.innerText = "GitHub";
-    gh.href = data["GitHub-url"];
-    gh.target = "_blank";
     links.appendChild(gh);
     left.appendChild(links);
     const border = (data["border-color"] || "white") + " 1px solid";
