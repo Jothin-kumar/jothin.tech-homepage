@@ -33,7 +33,7 @@ function addSlide(data) {
     const slide = document.createElement("div");
     slide.classList.add("slide");
     if (data["border-color"]) {
-        slide.style.border = data["border-color"] + " 1px solid";
+        slide.style.border = data["border-color"] + " 2px solid";
     }
     if (data["shadow-color"]) {
         slide.style.boxShadow = "0 0 10px " + data["shadow-color"];
