@@ -78,7 +78,7 @@
     font-size: small;
 }
 .result {
-    border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+    border: rgba(255, 255, 255, 0.2) 1px solid;
     cursor: pointer;
     padding: 10px;
 }
