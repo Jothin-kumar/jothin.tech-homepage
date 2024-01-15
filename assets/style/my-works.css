@@ -78,7 +78,7 @@
     width: fit-content;
 }
 #navbar-search > input {
-    border-bottom: wheat 1px solid;
+    border-bottom: white 2px solid;
     width: 10vw;
     color: white;
     flex-grow: 1;
