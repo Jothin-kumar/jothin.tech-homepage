@@ -23,6 +23,7 @@
     display: grid;
     grid-template-columns: auto auto;
     overflow: hidden;
+    font-size: small;
 }
 .slide:hover {
     opacity: 1 !important;
