@@ -59,7 +59,6 @@ function configureZoomEffect(elem) {
 }
 function scrollToMyWorks() {
     window.scrollBoost = false;
-    window.addEventListener("scrollend", () => {window.scrollBoost = true;})
     document.getElementById("my-works").scrollIntoView({behavior: "smooth"});
 }
 

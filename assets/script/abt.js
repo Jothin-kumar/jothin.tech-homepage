@@ -1,4 +1,4 @@
-let scrollBoost = 3;
+const scrollBoost = 3;
 window.scrollBoost = true; // To disable scroll boost set this to false.
 
 function bodyLoadedAbt() {
@@ -11,7 +11,7 @@ function bodyLoadedAbt() {
             window.removeEventListener("scroll", handler);
             window.addEventListener("scroll", handler2);
             if (y > abt.scrollHeight) {
-                scrollBoost = 1;
+                window.scrollBoost = false;
             }
         }
         p = window.scrollY;
