@@ -95,7 +95,33 @@ function addSlide(data) {
 }
 
 const slidesBaseURL = "/slides/{id}.json";
-window.canAddNewSlide = true;
+
+fetchPinned = () => {
+    fetchSlide("pinned", (data) => {
+        function callback(r) {
+            const errorLoadingSlide = document.getElementById("error-loading-slide");
+            if (r) {
+                addSlide(r["slide"]);
+                errorLoadingSlide.style.display = "none";
+            }
+            else {
+                errorLoadingSlide.style.display = "block";
+            }
+        }
+        if (data) {
+            const pinned = eval(data);
+            for (let i = 0; i < pinned.length; i++) {
+                fetchSlide(pinned[i], callback);
+            }
+            window.canAddNewSlide = true;
+        }
+        else {
+            setTimeout(fetchPinned, 300);
+        }
+    });
+}
+setTimeout(fetchPinned, 300);
+
 window.nextSlide = "init";
 async function fetchSlide(slideID, callback) {
     window.canAddNewSlide = false;
