@@ -52,7 +52,7 @@
     text-align: center;
 }
 #search-with > p {
-    font-size: small;
+    font-size: medium;
     color: rgba(255, 255, 255, 0.75);
 }
 #search-with > div > p {
@@ -60,7 +60,7 @@
     border: white 1px solid;
     padding: 3px;
     border-radius: 5px;
-    font-size: small;
+    font-size: medium;
     cursor: pointer;
 }
 
@@ -73,9 +73,11 @@
 
 .result-title {
     font-size: large;
+    color: rgb(14, 14, 209);
 }
 .result-description {
-    font-size: small;
+    font-size: medium;
+    color: rgb(64, 78, 44);
 }
 .result {
     border: rgba(255, 255, 255, 0.2) 1px solid;

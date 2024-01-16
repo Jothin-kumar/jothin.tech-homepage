@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: auto auto;
     overflow: hidden;
-    font-size: small;
+    font-size: medium;
 }
 .slide:hover {
     opacity: 1 !important;
@@ -55,10 +55,10 @@
     grid-template-rows: auto auto auto;
 }
 .slide-left > h2 {
-    font-size: medium;
+    font-size: large;
 }
 .slide-left > .links-slide > p {
-    font-size: small;
+    font-size: medium;
     padding: 10px;
     text-align: center;
 }
