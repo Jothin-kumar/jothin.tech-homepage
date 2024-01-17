@@ -95,10 +95,12 @@ function addSlide(data) {
 }
 
 const slidesBaseURL = "/slides/{id}.json";
+window.addedSlides = [];
 
 fetchPinned = () => {
     fetchSlide("pinned", (data) => {
         function callback(r) {
+            window.addedSlides.push(r["id"]);
             const errorLoadingSlide = document.getElementById("error-loading-slide");
             if (r) {
                 addSlide(r["slide"]);
@@ -142,12 +144,11 @@ async function fetchSlide(slideID, callback) {
         callback(false);
     }
 }
-window.addedSlides = [];
 function slideCallback(r) {
     const errorLoadingSlide = document.getElementById("error-loading-slide");
     window.canAddNewSlide = true;
     if (r) {
-        if (!(r["id"] in window.addedSlides)) {
+        if (!(window.addedSlides.includes(r["id"]))) {
             addSlide(r["slide"]);
             window.addedSlides.push(r["id"]);
         }
