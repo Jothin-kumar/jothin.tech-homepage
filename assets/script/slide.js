@@ -109,7 +109,7 @@ fetchPinned = () => {
             }
         }
         if (data) {
-            const pinned = eval(data);
+            const pinned = data["."];
             for (let i = 0; i < pinned.length; i++) {
                 fetchSlide(pinned[i], callback);
             }
@@ -133,6 +133,7 @@ async function fetchSlide(slideID, callback) {
         }
         else {
             response.json().then((data) =>{
+                data["id"] = slideID;
                 callback(data);
             })
         }
@@ -141,11 +142,15 @@ async function fetchSlide(slideID, callback) {
         callback(false);
     }
 }
+window.addedSlides = [];
 function slideCallback(r) {
     const errorLoadingSlide = document.getElementById("error-loading-slide");
     window.canAddNewSlide = true;
     if (r) {
-        addSlide(r["slide"]);
+        if (!(r["id"] in window.addedSlides)) {
+            addSlide(r["slide"]);
+            window.addedSlides.push(r["id"]);
+        }
         window.nextSlide = r["next"];
         errorLoadingSlide.style.display = "none";
     }
