@@ -4,7 +4,7 @@
         {
             "label": "wrangler-dev",
             "type": "shell",
-            "command": "git clone https://github.com/Jothin-Kumar/build.git && python3 build/build.py && rm -rf build && wrangler pages dev build-output",
+            "command": "git clone https://github.com/Jothin-Kumar/build.git && python3 build/build.py && rm -rf build && cp -r assets/images build-output/img && wrangler pages dev build-output",
             "problemMatcher": []
         }
     ]

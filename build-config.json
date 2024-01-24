@@ -4,6 +4,10 @@
         {
             "replaceFrom": "/slides/{id}.json",
             "replaceWith": "https://s.jothin.tech/{id}"
+        },
+        {
+            "replaceFrom": "assets/images",
+            "replaceWith": "img"
         }
     ],
     "pages": [
