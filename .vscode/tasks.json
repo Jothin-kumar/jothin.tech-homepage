@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "wrangler-dev",
+            "type": "shell",
+            "command": "git clone https://github.com/Jothin-Kumar/build.git && python3 build/build.py && rm -rf build && wrangler pages dev build-output",
+            "problemMatcher": []
+        }
+    ]
+}
