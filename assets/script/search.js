@@ -24,7 +24,7 @@ function search(query) {
         return
     }
     let results = []
-    const words = query.split(" ")
+    const words = query.toLowerCase().split(" ")
     for (let i = 0; i < window.searchData.length; i++) {
         const t = window.searchData[i]["title"].toLowerCase()
         const d = window.searchData[i]["description"].toLowerCase()
