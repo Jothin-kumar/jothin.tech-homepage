@@ -124,7 +124,7 @@ function loaded() {
 }
 
 function displaySearchResults(query, results) {
-    document.getElementById("search-results-found").innerHTML = `${results.length} result(s) found for <br> '${query}'.`;
+    document.getElementById("search-results-found").innerHTML = `${results.length} result(s) found for <br> '${query}'`;
     document.querySelector("#search-results > div").innerHTML = "";
     for (let i = 0; i < results.length; i++) {
         const r = document.createElement("div");
