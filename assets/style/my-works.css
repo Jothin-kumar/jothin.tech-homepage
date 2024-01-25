@@ -75,9 +75,6 @@
     background-color: inherit;
     outline: none;
 }
-#navbar-search > button {
-    width: fit-content;
-}
 #navbar-search > input {
     border-bottom: white 2px solid;
     width: 10vw;
