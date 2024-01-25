@@ -17,7 +17,6 @@ fetchSearch = async () => {
         setTimeout(fetchSlide, 1000)
     }
 }
-fetchSearch()
 
 function search(query) {
     if (window.searchData.length === 0) {
@@ -94,6 +93,9 @@ function bodyLoadedSearch() {
             input.value = input.value.trim();
             displaySearch();
             document.getElementById("searching-msg").innerHTML = `Searching for<br>'${input.value}'`;
+            if (window.searchData.length === 0) {
+                fetchSearch()
+            }
             search(input.value)
         }
     });
