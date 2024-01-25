@@ -137,6 +137,7 @@ function bodyLoadedSearch() {
             evt.preventDefault()
             input.focus()
             input.select()
+            hideSearch()
         }
     })
 }
