@@ -86,11 +86,14 @@ function bodyLoadedSearch() {
         window.inSearch = false;
     });
     const input = document.getElementById("navbar-search-input");
+    const minChars = 1;
     const maxChars = 25;
     input.addEventListener("keydown", (evt) => {
-        if (evt.key === "Enter" && input.value && input.value.length <= maxChars) {
-            input.blur();
+        if (evt.key === "Enter") {
             input.value = input.value.trim();
+        }
+        if (evt.key === "Enter" && input.value && minChars <= input.value.length <= maxChars) {
+            input.blur();
             displaySearch();
             document.getElementById("searching-msg").innerHTML = `Searching for<br>'${input.value}'`;
             if (window.searchData.length === 0) {
@@ -100,7 +103,7 @@ function bodyLoadedSearch() {
         }
     });
     function borderColor() {
-        if (input.value) {
+        if (input.value.trim()) {
             input.style.borderColor = "darkgreen";
             if (input.value.length > maxChars) {
                 input.style.borderColor = "red";
