@@ -1,3 +1,64 @@
+const searchBaseURL = "/search.json";
+window.searchData = [];
+
+fetchSearch = async () => {
+    try {
+        const response = await fetch(searchBaseURL);
+        if (!response.ok) {
+            setTimeout(fetchSlide, 1000)
+        }
+        else {
+            response.json().then((data) =>{
+                window.searchData = data
+            })
+        }
+    }
+    catch {
+        setTimeout(fetchSlide, 1000)
+    }
+}
+fetchSearch()
+
+function search(query) {
+    if (window.searchData.length === 0) {
+        setTimeout(() => {search(query)}, 1000)
+        return
+    }
+    let results = []
+    const words = query.split(" ")
+    for (let i = 0; i < window.searchData.length; i++) {
+        const t = window.searchData[i]["title"].toLowerCase()
+        const d = window.searchData[i]["description"].toLowerCase()
+        let score = 0
+        for (let j = 0; j < words.length; j++) {
+            if (t.includes(words[j])) {
+                score += 1
+            }
+            if (d.includes(words[j])) {
+                score += .5
+            }
+        }
+        if (score > 0) {
+            results.push({
+                "score": score,
+                ".": window.searchData[i]
+            })
+        }
+    }
+
+    results.sort((a, b) => { // sort based on score in descending order
+        const scoreA = a["score"]
+        const scoreB = b["score"]
+
+        return (scoreA < scoreB) ? +1: (scoreB < scoreA) ? -1: 0
+    })
+
+    results = results.map((s, i, a) => {
+        return s["."]
+    })
+    displaySearchResults(query, results)
+}
+
 function displaySearch() {
     document.getElementById("search-parent").style.display = "block";
     document.body.style.overflow = "hidden";
@@ -33,6 +94,7 @@ function bodyLoadedSearch() {
             input.value = input.value.trim();
             displaySearch();
             document.getElementById("searching-msg").innerHTML = `Searching for<br>'${input.value}'`;
+            search(input.value)
         }
     });
     function borderColor() {

@@ -6,6 +6,10 @@
             "replaceWith": "https://s.jothin.tech/{id}"
         },
         {
+            "replaceFrom": "/search.json",
+            "replaceWith": "https://s.jothin.tech/search"
+        },
+        {
             "replaceFrom": "assets/images",
             "replaceWith": "img"
         }
