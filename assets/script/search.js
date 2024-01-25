@@ -73,10 +73,13 @@ window.addEventListener("keydown", (evt) => {
     }
 });
 window.addEventListener("click", () => {
-    if (!window.inSearch) {
+    if (!window.inSearch && window.canHideSearch) {
         hideSearch();
     }
 });
+window.addEventListener("mousemove", () => {
+    window.canHideSearch = true
+})
 
 function bodyLoadedSearch() {
     document.getElementById("search").addEventListener("mouseenter", () => {
@@ -88,29 +91,42 @@ function bodyLoadedSearch() {
     const input = document.getElementById("navbar-search-input");
     const minChars = 1;
     const maxChars = 25;
+    function searchQuery(query) {
+        window.canHideSearch = false
+        input.blur();
+        displaySearch();
+        document.getElementById("searching-msg").innerHTML = `Searching for<br>'${query}'`;
+        if (window.searchData.length === 0) {
+            fetchSearch()
+        }
+        search(query)
+    }
     input.addEventListener("keydown", (evt) => {
         if (evt.key === "Enter") {
             input.value = input.value.trim();
         }
         if (evt.key === "Enter" && input.value && minChars <= input.value.length <= maxChars) {
-            input.blur();
-            displaySearch();
-            document.getElementById("searching-msg").innerHTML = `Searching for<br>'${input.value}'`;
-            if (window.searchData.length === 0) {
-                fetchSearch()
-            }
-            search(input.value)
+            searchQuery(input.value)
         }
     });
+    document.getElementById("search-go-btn").addEventListener("click", () => {
+        if (input.value && minChars <= input.value.length <= maxChars) {
+            searchQuery(input.value)
+        }
+    })
     function borderColor() {
+        const goBtn = document.getElementById("search-go-btn")
         if (input.value.trim()) {
             input.style.borderColor = "darkgreen";
+            goBtn.style.display = "block"
             if (input.value.length > maxChars) {
                 input.style.borderColor = "red";
+                goBtn.style.display = "none"
             }
         }
         else {
             input.style.borderColor = "white";
+            goBtn.style.display = "none"
         }
     }
     input.addEventListener("keyup", borderColor);

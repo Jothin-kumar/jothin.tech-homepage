@@ -69,6 +69,7 @@
 }
 #navbar-search {
     display: flex;
+    align-items: center;
 }
 #navbar-search > * {
     border: 0;
@@ -87,4 +88,9 @@
 }
 #navbar-search > input::selection {
     background-color: black;
+}
+#navbar-search > button {
+    color: white;
+    display: none;
+    cursor: pointer;
 }
