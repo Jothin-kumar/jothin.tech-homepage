@@ -24,7 +24,7 @@ function search(query) {
         return
     }
     let results = []
-    const words = query.toLowerCase().split(" ")
+    const words = query.replace(/[^a-zA-Z0-9]/g, " ").replace(/  +/g, ' ').toLowerCase().split(" ")
     for (let i = 0; i < window.searchData.length; i++) {
         const t = window.searchData[i]["title"].toLowerCase()
         const d = window.searchData[i]["description"].toLowerCase()
