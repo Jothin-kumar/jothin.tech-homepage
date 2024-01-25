@@ -24,17 +24,17 @@ function search(query) {
         return
     }
     let results = []
-    const words = query.replace(/[^a-zA-Z0-9]/g, " ").replace(/  +/g, ' ').toLowerCase().split(" ")
+    const words = query.replace(/[^a-zA-Z0-9]/g, " ").replace(/  +/g, ' ').trim().toLowerCase().split(" ")
     for (let i = 0; i < window.searchData.length; i++) {
         const t = window.searchData[i]["title"].toLowerCase()
         const d = window.searchData[i]["description"].toLowerCase()
         let score = 0
         for (let j = 0; j < words.length; j++) {
             if (t.includes(words[j])) {
-                score += 1
+                score += 10
             }
             if (d.includes(words[j])) {
-                score += .5
+                score += 1
             }
         }
         if (score > 0) {
