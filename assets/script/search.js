@@ -115,6 +115,14 @@ function bodyLoadedSearch() {
     }
     input.addEventListener("keyup", borderColor);
     borderColor();
+
+    window.addEventListener("keypress", (evt) => {
+        if (evt.key === "/") {
+            evt.preventDefault()
+            input.focus()
+            input.select()
+        }
+    })
 }
 
 function loading() {
