@@ -77,11 +77,13 @@
     outline: none;
 }
 #navbar-search > input {
-    border-bottom: white 2px solid;
+    border-bottom: white 3px solid;
     width: 10vw;
     color: white;
     flex-grow: 1;
     font-size: large;
+    border-radius: 10px;
+    padding: 10px;
 }
 @keyframes search-focus {
     0%, 50% {
