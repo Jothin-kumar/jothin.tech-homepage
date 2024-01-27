@@ -83,6 +83,14 @@
     flex-grow: 1;
     font-size: large;
 }
+@keyframes search-focus {
+    0%, 50% {
+        background-color: black;
+    }
+    25%, 100% {
+        background-color: transparent;
+    }
+}
 #navbar-search > input::placeholder {
     color: white;
 }

@@ -133,11 +133,15 @@ function bodyLoadedSearch() {
     borderColor();
 
     window.addEventListener("keydown", (evt) => {
-        if (evt.key === "/" || evt.ctrlKey && evt.key === "f") {
+        if (evt.key === "/" || evt.ctrlKey && ["f", "F"].includes(evt.key)) {
             evt.preventDefault()
             input.focus()
             input.select()
             hideSearch()
+            input.style.animation = "search-focus 3s"
+            setTimeout(() => {
+                input.style.animation = ""
+            }, 2000)
         }
     })
 }
