@@ -5,7 +5,7 @@ fetchSearch = async () => {
     try {
         const response = await fetch(searchBaseURL);
         if (!response.ok) {
-            setTimeout(fetchSlide, 1000)
+            setTimeout(fetchSearch, 1000)
         }
         else {
             response.json().then((data) =>{
@@ -14,7 +14,7 @@ fetchSearch = async () => {
         }
     }
     catch {
-        setTimeout(fetchSlide, 1000)
+        setTimeout(fetchSearch, 1000)
     }
 }
 
