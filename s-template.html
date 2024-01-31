@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/script/tooltip.js"></script>
+    <link rel="stylesheet" href="../assets/style/tooltip.css">
+    <title><!-- title --> - Jothin Kumar</title>
+    <style>
+        * {
+            user-select: none;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        #main {
+            background-color: rgba(255, 255, 255, .05);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+
+            max-height: 95vh;
+            overflow-y: scroll;
+        }
+        @media screen and (orientation: portrait) {
+            #main {
+                min-width: 95vw;
+            }
+        }
+        h1 {
+            text-align: center;
+            border-bottom: white 1px solid;
+            padding: 10px;
+        }
+        img {
+            max-width: 50vw;
+            max-height: 50vh;
+        }
+        #links {
+            margin: 10px auto;
+        }
+        .link {
+            margin: auto 5px;
+            border: white 1px solid;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            color: white !important;
+            text-decoration: none;
+        }
+        .link:hover {
+            background-color: rgba(0, 9, 128, .25);
+        }
+    </style>
+    <script>
+        window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
+    </script>
+</head>
+<body onload="tooltipBodyLoaded()">
+    <div id="main">
+        <h1><!-- title --></h1>
+        <a href="<!-- link -->"><img src="<!-- img src -->" alt="<!-- title -->"></a>
+        <div id="links">
+            <a class="link" id="visit" tooltip="<!-- link-tooltip -->" href="<!-- link -->">Visit</a>
+            <a class="link" id="gh-link" tooltip="<!-- gh-tooltip -->" href="<!-- gh -->">GitHub</a>
+        </div>
+        <div id="description">
+            <!-- description -->
+        </div>
+    </div>
+</body>
+</html>

@@ -3,3 +3,6 @@ node_modules
 build-output
 build
 .vscode/settings.json
+s
+slides-git
+_build-config.json
