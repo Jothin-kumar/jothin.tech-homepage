@@ -28,7 +28,7 @@
             background-color: rgba(255, 255, 255, .025);
             border-radius: 10px;
             padding: 10px;
-            overflow-y: scroll;
+            overflow-y: auto;
 
             position: absolute;
             top: 50%;
@@ -37,6 +37,9 @@
 
             display: grid;
             grid-template-rows: min-content auto;
+        }
+        #main {
+            scrollbar-width: thin;
         }
         #searchbar {
             padding-top: 25px;
