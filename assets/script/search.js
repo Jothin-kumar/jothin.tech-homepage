@@ -58,7 +58,9 @@ function search(query) {
     displaySearchResults(query, results)
 }
 
+window.searchDisplayEvent = new Event("search-display")
 function displaySearch() {
+    window.dispatchEvent(window.searchDisplayEvent)
     document.getElementById("search-parent").style.display = "block";
     document.body.style.overflow = "hidden";
     loading();

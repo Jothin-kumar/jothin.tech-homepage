@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Jothin Kumar</title>
+    <script src="assets/script/search.js"></script>
+    <link rel="stylesheet" href="assets/style/loader.css">
+    <style>
+        * {
+            user-select: none;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        #main {
+            width: 50vw;
+            max-height: 90vh;
+            min-height: 30vh;
+        }
+        @media screen and (orientation: portrait) {
+            #main {
+                width: 90vw;
+            }
+        }
+        #main {
+            background-color: rgba(255, 255, 255, .025);
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: scroll;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            display: grid;
+            grid-template-rows: min-content auto;
+        }
+        #searchbar {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            max-width: 80vw;
+            background-color: rgba(0, 128, 0, .2);
+            border-radius: 20px;
+            margin-bottom: 25px;
+            margin: auto;
+        }
+        .sbar-unused {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #navbar-search-input {
+            border: 0;
+            background-color: transparent;
+
+            border-bottom: white 1px solid;
+            width: 30vw;
+            margin: 5px;
+            color: white;
+            font-size: large;
+
+            &:focus {
+                outline: none;
+            }
+            &::selection {
+                background-color: black;
+            }
+        }
+        @media screen and (orientation: portrait) {
+            #navbar-search-input {
+                width: auto;
+            }
+        }
+        #search-go-btn {
+            background-color: transparent;
+            border: green 1px solid;
+            border-radius: 10px;
+            font-size: large;
+            color: green;
+            margin: 5px;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, .1);
+                cursor: pointer;
+            }
+        }
+
+        #search-loader {
+            display: none;
+        }
+
+        #search-info {
+            text-align: center;
+        }
+        #search-results > p {
+            text-align: center;
+        }
+
+        .result-title {
+            font-size: large;
+            color: rgb(14, 14, 209);
+        }
+        .result-description {
+            font-size: medium;
+            color: rgb(64, 78, 44);
+        }
+        .result {
+            border: rgba(255, 255, 255, 0.2) 1px solid;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .result:hover {
+            background-color: rgba(0, 100, 20, .1);
+        }
+    </style>
+    <script>
+        window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
+    </script>
+    <script>
+        window.addEventListener("search-display", () => {
+            document.getElementById("searchbar").classList.remove("sbar-unused")
+        })
+    </script>
+    <script>
+        function bodyLoaded() {
+            document.getElementById("navbar-search-input").focus()
+        }
+    </script>
+</head>
+<body onload="bodyLoadedSearch(); bodyLoaded()">
+    <div id="main">
+        <div id="searchbar" class="sbar-unused">
+            <input placeholder="Search ( / )" spellcheck="false" id="navbar-search-input" maxlength="25">
+            <button id="search-go-btn">Go &rarr;</button>
+        </div>
+        <div id="results-parent">
+            <div id="search-info">
+                <div class="loader" id="search-loader">
+                    <p id="searching-msg">Searching for </p>
+                    <div class="l-dot l-dot1"></div>
+                    <div class="l-dot l-dot2"></div>
+                    <div class="l-dot l-dot3"></div>
+                </div>
+                <p id="search-results-found"></p>
+            </div>
+            <div id="search-results">
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Just for the JS file. -->
+    <div id="search-parent">
+        <div id="search"></div>
+    </div>
+
+</body>
+</html>
