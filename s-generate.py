@@ -46,3 +46,6 @@ with open("build-config.json") as b:
 with open("build-config.json", "w") as b:
     data["pages"] += pages
     json.dump(data, b)
+
+with open("sitemap.txt", "w") as sitemap_file:
+    sitemap_file.write("\n".join(["https://jothin.tech"] + [f"https://jothin.tech{path}"[:-5] for path in pages]))

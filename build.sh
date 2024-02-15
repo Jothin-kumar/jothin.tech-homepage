@@ -29,6 +29,7 @@ cp -r assets/images build-output/img
 printf "copy images ✅\n\n"
 
 cp robots.txt build-output/robots.txt
-printf "robots.txt ✅\n\n"
+cp sitemap.txt build-output/sitemap.txt
+printf "robots.txt and sitemap ✅\n\n"
 
 cp _build-config.json build-config.json  #
