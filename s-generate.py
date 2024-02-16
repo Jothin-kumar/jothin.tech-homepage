@@ -5,7 +5,8 @@ Run this py file to generate webpages in s/*
 import os, shutil, glob, json
 
 
-shutil.rmtree("s")
+if os.path.exists("s"):
+    shutil.rmtree("s")
 os.mkdir("s")
 
 with open("s-template.html") as t:
