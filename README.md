@@ -6,6 +6,7 @@
 ```
 jothin.tech
 +--/
++--/favicon.webp
 +--/search
 +--/s/
    +--slide-1
