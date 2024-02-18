@@ -99,11 +99,11 @@ window.addedSlides = [];
 
 fetchPinned = () => {
     fetchSlide("pinned", (data) => {
+        const errorLoadingSlide = document.getElementById("error-loading-slide");
         function callback(r) {
-            window.addedSlides.push(r["id"]);
-            const errorLoadingSlide = document.getElementById("error-loading-slide");
             if (r) {
                 addSlide(r["slide"]);
+                window.addedSlides.push(r["id"]);
                 errorLoadingSlide.style.display = "none";
             }
             else {
@@ -118,6 +118,7 @@ fetchPinned = () => {
             window.canAddNewSlide = true;
         }
         else {
+            errorLoadingSlide.style.display = "block";
             setTimeout(fetchPinned, 300);
         }
     });
