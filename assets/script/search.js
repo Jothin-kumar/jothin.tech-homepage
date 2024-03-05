@@ -44,8 +44,8 @@ function search(query) {
             return score
         }
 
-        total_score += calcScore(10, query, t)
-        total_score += calcScore(2, query, d)
+        total_score += calcScore(100, query, t)
+        total_score += calcScore(50, query, d)
         total_score += calcScore(5, t, query)
         total_score += calcScore(1, d, query)
 
