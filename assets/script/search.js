@@ -24,26 +24,42 @@ function search(query) {
         return
     }
     let results = []
-    const words = query.replace(/[^a-zA-Z0-9]/g, " ").replace(/  +/g, ' ').trim().toLowerCase().split(" ")
+    let sum_of_all_scores = 0
+    function toList(str) {
+        return str.replace(/[^a-zA-Z0-9]/g, " ").replace(/  +/g, ' ').trim().toLowerCase().split(" ")
+    }
     for (let i = 0; i < window.searchData.length; i++) {
         const t = window.searchData[i]["title"].toLowerCase()
         const d = window.searchData[i]["description"].toLowerCase()
-        let score = 0
-        for (let j = 0; j < words.length; j++) {
-            if (t.includes(words[j])) {
-                score += 10
+        let total_score = 0
+
+        function calcScore(scoreValue, toListParam, checkInStr) {
+            let score = 0
+            const list = toList(toListParam)
+            for (let j = 0; j < list.length; j++) {
+                if (checkInStr.includes(list[j])) {
+                    score += scoreValue
+                }
             }
-            if (d.includes(words[j])) {
-                score += 1
-            }
+            return score
         }
-        if (score > 0) {
+
+        total_score += calcScore(10, query, t)
+        total_score += calcScore(2, query, d)
+        total_score += calcScore(5, t, query)
+        total_score += calcScore(1, d, query)
+
+        if (total_score > 0) {
+            sum_of_all_scores += total_score
             results.push({
-                "score": score,
+                "score": total_score,
                 ".": window.searchData[i]
             })
         }
     }
+
+    avg_score = sum_of_all_scores / window.searchData.length
+    results = results.filter(r => r["score"] >= avg_score)
 
     results.sort((a, b) => { // sort based on score in descending order
         const scoreA = a["score"]
