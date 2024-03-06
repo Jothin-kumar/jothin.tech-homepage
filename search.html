@@ -26,7 +26,6 @@
             }
         }
         #main {
-            background-color: rgba(255, 255, 255, .025);
             border-radius: 10px;
             padding: 10px;
             overflow-y: auto;
@@ -127,6 +126,7 @@
     <script>
         window.addEventListener("search-display", () => {
             document.getElementById("searchbar").classList.remove("sbar-unused")
+            document.getElementById("main").style.backgroundColor = "rgba(255, 255, 255, .025)"
         })
     </script>
     <script>
