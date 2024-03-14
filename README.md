@@ -6,13 +6,11 @@
 ```
 jothin.tech
 +--/
-+--/favicon.webp
 +--/search
 +--/s/
    +--slide-1
    +--slide-2
    +--etc...
-+--/assets/images/*
 ```
 
 ## prod URLs
