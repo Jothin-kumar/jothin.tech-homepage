@@ -14,7 +14,7 @@
     box-shadow: 0 69px 69px rgba(14, 6, 24, 0.5);
 }
 #profile-pic-abt {
-
+    color: transparent;
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
