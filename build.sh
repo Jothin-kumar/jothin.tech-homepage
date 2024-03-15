@@ -32,4 +32,7 @@ cp robots.txt build-output/robots.txt
 cp sitemap.txt build-output/sitemap.txt
 printf "robots.txt and sitemap ✅\n\n"
 
+cp _redirects build-output/_redirects
+printf "redirects ✅\n\n"
+
 cp _build-config.json build-config.json  #
