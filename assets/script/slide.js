@@ -70,7 +70,7 @@ function addSlide(data) {
     visit.innerText = "Visit";
     links.appendChild(visit);
     const gh = document.createElement("p");
-    gh.setAttribute("tooltip", data["GitHub-url"].replace("https://github.com/Jothin-kumar/", ""));
+    gh.setAttribute("tooltip", data["GitHub-url"].replace("https://github.com/Jothin-kumar/", "").replace("/", ""));
     enableTooltip(gh);
     gh.onclick = () => {
         window.open(data["GitHub-url"], "_blank");
