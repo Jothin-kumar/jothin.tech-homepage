@@ -91,7 +91,12 @@ function addSlide(data) {
 
     slide.appendChild(left);
     slide.appendChild(right);
-    document.getElementById("slides-here").appendChild(slide);
+
+    const imgPreloader = new Image()
+    imgPreloader.src = data["image-src"]
+    imgPreloader.onload = () => {
+        document.getElementById("slides-here").appendChild(slide);
+    }
 }
 
 const slidesBaseURL = "/slides/{id}.json";
