@@ -1,12 +1,17 @@
 #about-me {
     text-align: center;
     background-color: black;
+    background: url("/assets/images/bg-dot.svg") black;
 }
 #about-me-sub {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .69);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 69px 69px rgba(14, 6, 24, 0.5);
 }
 #profile-pic-abt {
 
@@ -18,7 +23,7 @@
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 h1 {
-    color: rgb(231, 25, 18);
+    color: rgb(73, 73, 2);
     font-size: 2rem;
     margin-top: 5vh;
     margin-bottom: 2vh;
