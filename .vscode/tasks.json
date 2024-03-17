@@ -2,10 +2,53 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build",
+            "type": "process",
+            "command": "./build.sh",
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "clear": false,
+            }
+        },
+        {
+            "label": "open in firefox",
+            "type": "process",
+            "command": "firefox",
+            "args": ["http://localhost:6900"],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "clear": false,
+            }
+        },
+        {
+            "label": "open in chromium",
+            "type": "process",
+            "command": "chromium",
+            "args": ["http://localhost:6900"],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "clear": false,
+            }
+        },
+        {
             "label": "wrangler-dev",
-            "type": "shell",
-            "command": "./build.sh && wrangler pages dev build-output",
-            "problemMatcher": []
+            "type": "process",
+            "command": "wrangler",
+            "args": ["pages", "dev", "build-output", "--port", "6900"],
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "clear": false
+            }
         }
     ]
 }
