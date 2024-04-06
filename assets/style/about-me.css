@@ -53,15 +53,16 @@ h1 {
     transform: translateY(-50%);
     color: white;
 }
-#explore-my-works-btn {
+.abt-btn {
     padding: 10px;
     border-radius: 10px;
     font-size: 1rem;
     background-color: rgba(15, 23, 143, 0.1);
     border: rgba(0, 7, 65, 0.5) 1px solid;
     color: aliceblue;
+    margin: 10px;
 }
-#explore-my-works-btn:hover {
+.abt-btn:hover {
     background-color: rgba(36, 143, 15, 0.1);
     border: rgba(0, 65, 3, 0.5) 1px solid;
     cursor: pointer;
