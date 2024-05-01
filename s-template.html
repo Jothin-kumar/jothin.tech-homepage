@@ -31,6 +31,11 @@
 
             max-height: 95vh;
             overflow-y: scroll;
+
+            scrollbar-width: none;
+        }
+        #main::-webkit-scrollbar {
+            display: none;
         }
         @media screen and (orientation: portrait) {
             #main {
@@ -64,6 +69,12 @@
         }
         #description li {
             width: fit-content;
+        }
+        #description a {
+            color: olive;
+        }
+        #description a:visited {
+            color: olivedrab;
         }
     </style>
     <script>
