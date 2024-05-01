@@ -9,3 +9,8 @@ footer > p {
     font-size: 1.5em;
     margin-top: 1em;
 }
+#visit-my-blog-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
