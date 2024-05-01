@@ -159,27 +159,27 @@ function slideCallback(r) {
             window.addedSlides.push(r["id"]);
         }
         window.nextSlide = r["next"];
+        if (!window.nextSlide) {
+            document.getElementById("slides-loader").style.display = "none";
+            document.getElementById("main-footer").style.display = "block";
+        }
         errorLoadingSlide.style.display = "none";
     }
     else {
         errorLoadingSlide.style.display = "block";
     }
 }
-function spawnNewSlide() {
-    if (window.nextSlide){
-        if (window.canAddNewSlide) {
-            fetchSlide(window.nextSlide, slideCallback);
-        }
-    }
-    else {
-        document.getElementById("slides-loader").style.display = "none";
-        document.getElementById("main-footer").style.display = "block";
-    }
-}
 async function slideSpawner() {
     while (true) {
         if (document.getElementById("slides-loader").getBoundingClientRect().bottom < window.innerHeight) {
-            spawnNewSlide();
+            if (window.nextSlide){
+                if (window.canAddNewSlide) {
+                    fetchSlide(window.nextSlide, slideCallback);
+                }
+            }
+            else {
+                break
+            }
         }
         await new Promise(r => setTimeout(r, 300));
     }
