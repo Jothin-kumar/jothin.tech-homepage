@@ -161,6 +161,7 @@ function slideCallback(r) {
     window.canAddNewSlide = true;
     if (r) {
         if (!(window.addedSlides.includes(r["id"]))) {
+            console.log(r["next"], window.addedSlides.includes(r["next"]));
             addSlide(r["slide"], !r["next"] || window.addedSlides.includes(r["next"]));
             window.addedSlides.push(r["id"]);
         }
