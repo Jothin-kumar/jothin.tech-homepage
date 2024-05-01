@@ -96,11 +96,9 @@ function addSlide(data, isLast=false) {
     imgPreloader.src = data["image-src"]
     imgPreloader.onload = () => {
         document.getElementById("slides-here").appendChild(slide);
-        console.log("...");
         if (isLast) {
             document.getElementById("slides-loader").style.display = "none";
             document.getElementById("main-footer").style.display = "block";
-            console.log(".");
         }
     }
 }
@@ -161,7 +159,6 @@ function slideCallback(r) {
     window.canAddNewSlide = true;
     if (r) {
         if (!(window.addedSlides.includes(r["id"]))) {
-            console.log(r["next"], window.addedSlides.includes(r["next"]), r["id"]);
             addSlide(r["slide"], !r["next"] || window.addedSlides.includes(r["next"]) && !r["id"] === "init");
             window.addedSlides.push(r["id"]);
         }
