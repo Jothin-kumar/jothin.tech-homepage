@@ -173,6 +173,7 @@ function spawnNewSlide() {
     }
     else {
         document.getElementById("slides-loader").style.display = "none";
+        document.getElementById("main-footer").style.display = "block";
     }
 }
 async function slideSpawner() {
