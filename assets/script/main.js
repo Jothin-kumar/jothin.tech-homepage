@@ -3,6 +3,7 @@ function bodyLoaded() {
     configureZoomEffect(document.getElementById("explore-my-works-btn"));
     configureZoomEffect(document.getElementById("visit-my-blog-btn"));
     configureZoomEffect(document.getElementById("join-dc-btn"));
+    configureZoomEffect(document.getElementById("connect-btn"));
     const socials = document.getElementById("abt-me-socials").children;
     for (let i = 0; i < socials.length; i++) {
         configureZoomEffect(socials[i]);
