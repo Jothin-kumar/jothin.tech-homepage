@@ -18,7 +18,7 @@ def generate(data):
         .replace("<!-- link-tooltip -->", data["url"].replace("https://", ""))
         .replace("<!-- img src -->", data["image-src"])
         .replace("<!-- gh -->", data["GitHub-url"])
-        .replace("<!-- gh-tooltip -->", data["GitHub-url"].replace("https://github.com/Jothin-Kumar/", "").replace("https://github.com/", ""))
+        .replace("<!-- gh-tooltip -->", data["GitHub-url"].replace("https://github.com/Jothin-kumar/", ""))
         .replace("<!-- description -->", data["description"])
         )
 
