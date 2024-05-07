@@ -98,7 +98,7 @@ function addSlide(data, isLast=false) {
         document.getElementById("slides-here").appendChild(slide);
         if (isLast) {
             document.getElementById("slides-loader").style.display = "none";
-            document.getElementById("main-footer").style.display = "block";
+            document.getElementById("main-footer").style.opacity = "1";
         }
     }
 }
