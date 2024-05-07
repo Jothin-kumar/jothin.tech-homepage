@@ -10,6 +10,7 @@
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, .69);
     padding: 20px;
+    max-width: 95vw;
     border-radius: 10px;
     box-shadow: 0 69px 69px rgba(14, 6, 24, 0.5);
 }
@@ -33,16 +34,16 @@ h1 {
     grid-template-columns: auto auto auto auto auto auto;
     background-color: rgba(10, 10, 0, 0.1);
     border-radius: 50px;
-    padding: 2vh;
     height: fit-content;
+    max-width: 75vw;
     width: 45vh;
     margin-bottom: 2vh;
 }
 #abt-me-socials > a {
     display: inline;
     background-color: black;
-    height: 6vh;
-    width: 6vh;
+    height: 5vh;
+    width: 5vh;
     overflow: hidden;
     border-radius: 50%;
 }
