@@ -74,7 +74,6 @@
 #navbar-search > * {
     border: 0;
     background-color: inherit;
-    outline: none;
 }
 #navbar-search > input {
     border-bottom: white 3px solid;
