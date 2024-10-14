@@ -1,3 +1,5 @@
+set -e
+
 cp build-config.json _build-config.json  #
 
 if [ -d "slides-git" ]
