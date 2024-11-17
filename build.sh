@@ -28,6 +28,7 @@ printf "git (build) ✅\n\n"
 python3 build/build.py
 printf "build.py ✅\n\n"
 cp -r assets/images build-output/img
+cp favicon.png build-output/favicon.png
 printf "copy images ✅\n\n"
 
 cp robots.txt build-output/robots.txt
