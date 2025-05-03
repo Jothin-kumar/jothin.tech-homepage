@@ -60,7 +60,7 @@ class SlideLoader {
         while (batchesUsed + 1 < batchCount & this.canProceed) {
             if (this.slides.length < 2) {
                 batchesUsed += 1
-                const batchSlidesData = await getJSON(`/slides/${this.tag}/batch-${this.batchesUsed}.json`)
+                const batchSlidesData = await getJSON(`/slides/${this.tag}/batch-${batchesUsed}.json`)
                 this.slides = this.slides.concat(batchSlidesData["batched-slides"])
             }
             await new Promise(resolve => setTimeout(resolve, 200))
