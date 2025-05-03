@@ -12,6 +12,7 @@ function bodyLoaded() {
     // Prevent right click.
     window.addEventListener("contextmenu", (evt) => {evt.preventDefault()});
 }
+bodyLoaded()
 function configureZoomEffect(elem) {
     const throttle = 500;
     // e for enter; l for leave.

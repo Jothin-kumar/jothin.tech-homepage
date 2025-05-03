@@ -16,14 +16,8 @@
         <link rel="stylesheet" href="assets/style/loader.css">
         <link rel="stylesheet" href="assets/style/tooltip.css">
         <link rel="stylesheet" href="assets/style/search.css">
-        <script src="assets/script/main.js"></script>
-        <script src="assets/script/navbar.js"></script>
-        <script src="assets/script/abt.js"></script>
-        <script src="assets/script/slide.js"></script>
-        <script src="assets/script/tooltip.js"></script>
-        <script src="assets/script/search.js"></script>
     </head>
-    <body onload="bodyLoaded(); bodyLoadedNavbar(); bodyLoadedAbt(); bodyLoadedSlides(); tooltipBodyLoaded(); bodyLoadedSearch();">
+    <body>
         <noscript>
             <style>
                 #about-me, #my-works, footer {
@@ -63,9 +57,9 @@
         <div id="my-works">
             <nav id="navbar">
                 <div id="navbar-tags">
-                    <div class="navbar-tag current-navbar-tag">Top</div>
-                    <div class="navbar-tag">Blogs</div>
-                    <div class="navbar-tag">Others</div>
+                    <div slide-tag-name="top" class="navbar-tag current-navbar-tag">Top</div>
+                    <div slide-tag-name="blogs" class="navbar-tag">Blogs</div>
+                    <div slide-tag-name="others" class="navbar-tag">Others</div>
                 </div>
                 <div id="navbar-search">
                     <input placeholder="Search ( / )" spellcheck="false" id="navbar-search-input" maxlength="25">
@@ -78,7 +72,11 @@
                 </div>
             </nav>
             <div id="slides-parent">
-                <div id="slides-here"></div>
+                <div id="slides-here">
+                    <div id="slides-here-tag-top" class="current-slides-tag"></div>
+                    <div id="slides-here-tag-blogs"></div>
+                    <div id="slides-here-tag-others"></div>
+                </div>
                 <div id="error-loading-slide">
                     <p>Error loading. Retrying...</p>
                 </div>
@@ -112,5 +110,13 @@
                 </div>
             </div>
         </div>
+
+        <script src="assets/script/helper.js"></script>
+        <script src="assets/script/main.js"></script>
+        <script src="assets/script/navbar.js"></script>
+        <script src="assets/script/abt.js"></script>
+        <script src="assets/script/slide.js"></script>
+        <script src="assets/script/tooltip.js"></script>
+        <script src="assets/script/search.js"></script>
     </body>
 </html>

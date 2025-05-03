@@ -99,7 +99,7 @@ window.addEventListener("mousemove", () => {
     window.canHideSearch = true
 })
 
-function bodyLoadedSearch() {
+function SearchMain() {
     document.getElementById("search").addEventListener("mouseenter", () => {
         window.inSearch = true;
     });
@@ -163,6 +163,7 @@ function bodyLoadedSearch() {
         }
     })
 }
+SearchMain()
 
 function loading() {
     document.getElementById("search-loader").style.display = "block";

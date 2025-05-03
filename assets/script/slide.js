@@ -1,186 +1,90 @@
-function bodyLoadedSlides() {
-    window.addEventListener("touchstart", ()=> {
-        document.getElementById("slides-here").classList.add("strict-no-opacity");
-    });
-    setTimeout(slideSpawner, 0);
+function declareError() {
+    document.getElementById("error-loading-slide").style.display = "block"
+}
+function withdrawError() {
+    document.getElementById("error-loading-slide").style.display = "none"
+}
+function hideLoading() {
+    document.getElementById("slides-loader").style.display = "none"
+    document.getElementById("main-footer").style.opacity = "1"
+}
+function showLoading() {
+    document.getElementById("slides-loader").style.display = "block"
+    document.getElementById("main-footer").style.opacity = "0"
 }
 
-let slides = [];
-
-function modulus(n) {
-    if (n < 0) {
-        return n * -1;
-    }
-    return n;
-}
-window.addEventListener("mousemove", (evt)=> {
-    const slides = document.getElementsByClassName("slide");
-    var y, slide;
-    for (let i = 0; i < slides.length; i++) {
-        slide = slides[i];
-        y = modulus(evt.pageY - slide.offsetTop - (slide.scrollHeight / 2));
-        slide.style.opacity = (slide.scrollHeight/y)/2;
-    }
-});
-window.addEventListener("scroll", () => {
-    const slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.opacity = 1;
-    }
-})
-
-function addSlide(data, isLast=false) {
-    const slide = document.createElement("div");
-    slide.classList.add("slide");
-    if (data["border-color"]) {
-        slide.style.border = data["border-color"] + " 2px solid";
-    }
-    if (data["shadow-color"]) {
-        slide.style.boxShadow = "0 0 50px " + data["shadow-color"];
-    }
-
-    const left = document.createElement("div");
-    left.classList.add("slide-left");
-    if (data["image-src"]) {
-        const img = document.createElement("img");
-        img.onclick = () => {
-            window.open(data["url"], "_blank");
-        }
-        img.src = data["image-src"];
-        left.appendChild(img);
-        if (data["border-color"]) {
-            img.style.border = data["border-color"] + " 0.1px solid";
-        }
-    }
-    const name = document.createElement("h2");
-    name.innerText = data["name"];
-    name.onclick = () => {
-        window.open(data["url"], "_blank");
-    }
-    left.appendChild(name);
-    const links = document.createElement("div");
-    links.classList.add("links-slide");
-    const visit = document.createElement("p");
-    visit.setAttribute("tooltip", data["url"].replace("https://", ""));
-    enableTooltip(visit);
-    visit.onclick = () => {
-        window.open(data["url"], "_blank");
-    }
-    visit.classList.add("visit-work");
-    visit.innerText = "Visit";
-    links.appendChild(visit);
-    const gh = document.createElement("p");
-    gh.setAttribute("tooltip", data["GitHub-url"].replace("https://github.com/Jothin-kumar/", ""));
-    enableTooltip(gh);
-    gh.onclick = () => {
-        window.open(data["GitHub-url"], "_blank");
-    }
-    gh.classList.add("gh-work");
-    gh.innerText = "GitHub";
-    links.appendChild(gh);
-    left.appendChild(links);
-    const border = (data["border-color"] || "white") + " 2px solid";
-    visit.style.border = gh.style.border = border;
-
-    const right = document.createElement("div");
-    right.classList.add("slide-right");
-    const rightContent = document.createElement("div");
-    rightContent.classList.add("slide-right-content");
-    rightContent.innerHTML = data["description"];
-    right.appendChild(rightContent);
-
-    slide.appendChild(left);
-    slide.appendChild(right);
-
-    const imgPreloader = new Image()
-    imgPreloader.src = data["image-src"]
-    imgPreloader.onload = () => {
-        document.getElementById("slides-here").appendChild(slide);
-        if (isLast) {
-            document.getElementById("slides-loader").style.display = "none";
-            document.getElementById("main-footer").style.opacity = "1";
-        }
-    }
+function appendSlide(tag, html) {
+    const container = document.getElementById(`slides-here-tag-${tag}`)
+    const slideContainer = document.createElement("div")
+    slideContainer.className = "slide-container"
+    const slide = document.createElement("div")
+    slide.className = "slide"
+    slide.innerHTML = html
+    slideContainer.appendChild(slide)
+    container.appendChild(slideContainer)
 }
 
-const slidesBaseURL = "/slides/{id}.json";
-window.addedSlides = [];
-
-fetchPinned = () => {
-    fetchSlide("pinned", (data) => {
-        const errorLoadingSlide = document.getElementById("error-loading-slide");
-        function callback(r) {
-            if (r) {
-                addSlide(r["slide"]);
-                window.addedSlides.push(r["id"]);
-                errorLoadingSlide.style.display = "none";
-            }
-            else {
-                errorLoadingSlide.style.display = "block";
-            }
-        }
-        if (data) {
-            const pinned = data["."];
-            for (let i = 0; i < pinned.length; i++) {
-                fetchSlide(pinned[i], callback);
-            }
-            window.canAddNewSlide = true;
-        }
-        else {
-            errorLoadingSlide.style.display = "block";
-            setTimeout(fetchPinned, 300);
-        }
-    });
-}
-setTimeout(fetchPinned, 300);
-
-window.nextSlide = "init";
-async function fetchSlide(slideID, callback) {
-    window.canAddNewSlide = false;
-    const url = slidesBaseURL.replace("{id}", slideID);
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            callback(false);
-        }
-        else {
-            response.json().then((data) =>{
-                data["id"] = slideID;
-                callback(data);
-            })
-        }
-    }
-    catch {
-        callback(false);
-    }
-}
-function slideCallback(r) {
-    const errorLoadingSlide = document.getElementById("error-loading-slide");
-    window.canAddNewSlide = true;
-    if (r) {
-        if (!(window.addedSlides.includes(r["id"]))) {
-            addSlide(r["slide"], !r["next"] || window.addedSlides.includes(r["next"]) && !r["id"] === "init");
-            window.addedSlides.push(r["id"]);
-        }
-        window.nextSlide = r["next"];
-        errorLoadingSlide.style.display = "none";
-    }
-    else {
-        errorLoadingSlide.style.display = "block";
-    }
-}
-async function slideSpawner() {
+async function getJSON(url) {
     while (true) {
-        if (document.getElementById("slides-loader").getBoundingClientRect().bottom < window.innerHeight) {
-            if (window.nextSlide){
-                if (window.canAddNewSlide) {
-                    fetchSlide(window.nextSlide, slideCallback);
-                }
+        try {
+            const response = await fetch(url)
+            if (!response.ok) {
+                throw new Error("Network response was not ok")
             }
-            else {
-                break
-            }
+            const data = await response.json()
+            withdrawError()
+            return data
         }
-        await new Promise(r => setTimeout(r, 300));
+        catch (error) {
+            console.error("Error fetching JSON:", error)
+            declareError()
+        }
+        await new Promise(resolve => setTimeout(resolve, 5000))
     }
 }
+
+class SlideLoader {
+    constructor(tag) {
+        withdrawError()
+        showLoading()
+        this.tag = tag
+        this.initialise()
+        this.canProceed = true
+    }
+    async initialise() {
+        const initSlidesData = await getJSON(`/slides/${this.tag}/init.json`)
+        var batchCount = initSlidesData["batch-count"]
+        var batchesUsed = 0
+        this.slides = initSlidesData["batched-slides"]
+        this.mainloop()
+        while (batchesUsed + 1 < batchCount & this.canProceed) {
+            if (this.slides.length < 2) {
+                batchesUsed += 1
+                const batchSlidesData = await getJSON(`/slides/${this.tag}/batch-${this.batchesUsed}.json`)
+                this.slides = this.slides.concat(batchSlidesData["batched-slides"])
+            }
+            await new Promise(resolve => setTimeout(resolve, 200))
+        }
+        this.allBatchesFinished = true
+    }
+    async mainloop() {
+        while ((!this.allBatchesFinished || this.slides.length > 0) & this.canProceed) {
+            if (isVisible(document.getElementById('slides-loader'))) {
+                this.showSlide()
+            }
+            await new Promise(resolve => setTimeout(resolve, 200))
+        }
+        hideLoading()
+    }
+    showSlide() {
+        appendSlide(
+            this.tag,
+            this.slides.splice(0, 1)[0]
+        )
+    }
+    terminate() {
+        this.canProceed = false
+        document.getElementById(`slides-here-tag-${this.tag}`).innerHTML = ""
+    }
+}
+window.currentSlideLoader = new SlideLoader("top")

@@ -26,7 +26,7 @@ function enableTooltip(elem) {
     });
 }
 
-function tooltipBodyLoaded() {
+function tooltipMain() {
     window.tooltip = document.createElement("p");
     window.tooltip.id = "tooltip";
     document.body.appendChild(window.tooltip);
@@ -48,3 +48,4 @@ function tooltipBodyLoaded() {
         }
     }
 }
+tooltipMain()
