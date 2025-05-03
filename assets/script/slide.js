@@ -24,7 +24,7 @@ function appendSlide(tag, html) {
     container.appendChild(slideContainer)
 }
 
-async function getJSON(url) {
+async function getJSON(url, errorcallback) {
     while (true) {
         try {
             const response = await fetch(url)
@@ -37,7 +37,7 @@ async function getJSON(url) {
         }
         catch (error) {
             console.error("Error fetching JSON:", error)
-            declareError()
+            errorcallback()
         }
         await new Promise(resolve => setTimeout(resolve, 5000))
     }
@@ -52,15 +52,15 @@ class SlideLoader {
         this.canProceed = true
     }
     async initialise() {
-        const initSlidesData = await getJSON(`/slides/${this.tag}/init.json`)
+        const initSlidesData = await getJSON(`/slides/${this.tag}/init.json`, this.errorhandler)
         var batchCount = initSlidesData["batch-count"]
         var batchesUsed = 0
         this.slides = initSlidesData["batched-slides"]
         this.mainloop()
-        while (batchesUsed + 1 < batchCount & this.canProceed) {
+        while ((batchesUsed + 1 < batchCount) && this.canProceed) {
             if (this.slides.length < 2) {
                 batchesUsed += 1
-                const batchSlidesData = await getJSON(`/slides/${this.tag}/batch-${batchesUsed}.json`)
+                const batchSlidesData = await getJSON(`/slides/${this.tag}/batch-${batchesUsed}.json`, this.errorhandler)
                 this.slides = this.slides.concat(batchSlidesData["batched-slides"])
             }
             await new Promise(resolve => setTimeout(resolve, 200))
@@ -74,7 +74,7 @@ class SlideLoader {
             }
             await new Promise(resolve => setTimeout(resolve, 200))
         }
-        hideLoading()
+        if (this.canProceed) hideLoading()
     }
     showSlide() {
         appendSlide(
@@ -85,6 +85,9 @@ class SlideLoader {
     terminate() {
         this.canProceed = false
         document.getElementById(`slides-here-tag-${this.tag}`).innerHTML = ""
+    }
+    errorhandler() {
+        if (this.canProceed) declareError()
     }
 }
 window.currentSlideLoader = new SlideLoader("top")
