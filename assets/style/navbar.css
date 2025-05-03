@@ -1,33 +1,25 @@
-#my-works {
-    width: fit-content;
-    min-height: 100vh;
-    height: fit-content !important;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #navbar {
-    width: 69vw;
+    min-width: max-content;
+    width: 70vw;
     height: fit-content;
     animation: navbar infinite 300s;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1vh auto;
+    padding: 0 10px;
     border-radius: 5vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
     display: grid;
     grid-template-columns: auto auto auto;
     text-align: center;
     z-index: 2;
+    align-items: center;
 }
 @keyframes navbar {
     0%, 100% {
-        background-color: rgba(50, 150, 69, 0.95);
-        border: rgb(20, 75, 35) 3px solid;
+        background-color: rgba(50, 85, 150, 0.4);
+        border: rgb(50, 85, 150) 2px solid;
     }
     50% {
-        background-color: rgba(50, 85, 150, 0.95);
-        border: rgb(50, 85, 150) 3px solid;
+        background-color: rgba(50, 150, 85, 0.4);
+        border: rgb(20, 75, 35) 2px solid;
     }
 }
 .fix-navbar {
@@ -35,16 +27,32 @@
     top: 1vh;
     width: fit-content;
 }
-#navbar > div {
-    height: fit-content;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+
+#navbar-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vw;
 }
-#navbar p {
-    font-size: x-large;
+.navbar-tag {
+    padding: 0.5vw 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(100, 100, 100, 0.1);
+    border: rgba(100, 100, 100, 0.5) 1px solid;
+    font-size: large;
 }
-.my-works-social-logo {
+.current-navbar-tag {
+    background-color: rgba(243, 143, 12, 0.1) !important;
+    border: rgba(243, 143, 12, 0.5) 1px solid !important;
+}
+#navbar-tags > .navbar-tag:hover {
+    background-color: rgba(30, 240, 240, 0.1);
+    border: rgba(30, 240, 240, 0.5) 1px solid;
+}
+
+.navbar-social-logo {
     margin-right: 1vw;
     margin-left: 1vw;
 }
@@ -59,30 +67,29 @@
         width: 85vw;
         margin: auto;
     }
-    .my-works-social-logo {
-        margin: 2vh;
-    }
-
-    #navbar.scrolled-down > #navbar-search, #navbar.scrolled-down > #my-works-socials {
+    #navbar-socials {
         display: none;
     }
+    #navbar-tags {
+        margin: 10px auto;
+    }
 }
+
 #navbar-search {
     display: flex;
     align-items: center;
 }
 #navbar-search > * {
     border: 0;
-    background-color: inherit;
+    background-color: rgba(150, 150, 150, 0.1);
+    border-radius: 5px;
 }
 #navbar-search > input {
-    border-bottom: white 3px solid;
-    width: 10vw;
     color: white;
-    flex-grow: 1;
     font-size: large;
-    border-radius: 10px;
     padding: 10px;
+    margin: 10px;
+    flex-grow: 1;
 }
 @keyframes search-focus {
     0%, 50% {
@@ -98,8 +105,8 @@
 #navbar-search > input::selection {
     background-color: black;
 }
-#navbar-search > button {
+#search-go-btn {
     color: white;
-    display: none;
     cursor: pointer;
+    font-size: x-large;
 }

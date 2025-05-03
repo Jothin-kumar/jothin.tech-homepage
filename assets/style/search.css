@@ -1,9 +1,3 @@
-#search-go-btn {
-    font-size: x-large;
-}
-#search-go-btn:hover {
-    font-size: xx-large;
-}
 #search-parent {
     background-color: rgba(0, 0, 0, .9);
     position: fixed;

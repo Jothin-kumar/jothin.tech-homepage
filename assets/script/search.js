@@ -136,15 +136,15 @@ function bodyLoadedSearch() {
         const goBtn = document.getElementById("search-go-btn")
         if (input.value.trim()) {
             input.style.borderColor = "darkgreen";
-            goBtn.style.display = "block"
+            goBtn.style.opacity = "1"
             if (input.value.length > maxChars) {
                 input.style.borderColor = "red";
-                goBtn.style.display = "none"
+                goBtn.style.opacity = "0"
             }
         }
         else {
             input.style.borderColor = "white";
-            goBtn.style.display = "none"
+            goBtn.style.opacity = "0"
         }
     }
     input.addEventListener("keyup", borderColor);

@@ -7,6 +7,10 @@ function bodyLoaded() {
     for (let i = 0; i < socials.length; i++) {
         configureZoomEffect(socials[i]);
     }
+    const navbarTags = document.getElementById("navbar-tags").children;
+    for (let i = 0; i < navbarTags.length; i++) {
+        configureZoomEffect(navbarTags[i]);
+    }
 
     // Prevent right click.
     window.addEventListener("contextmenu", (evt) => {evt.preventDefault()});
