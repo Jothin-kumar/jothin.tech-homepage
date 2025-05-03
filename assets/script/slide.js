@@ -5,11 +5,11 @@ function withdrawError() {
     document.getElementById("error-loading-slide").style.display = "none"
 }
 function hideLoading() {
-    document.getElementById("slides-loader").style.display = "none"
+    document.getElementById("slides-loader").style.opacity = "0"
     document.getElementById("main-footer").style.opacity = "1"
 }
 function showLoading() {
-    document.getElementById("slides-loader").style.display = "block"
+    document.getElementById("slides-loader").style.opacity = "1"
     document.getElementById("main-footer").style.opacity = "0"
 }
 
