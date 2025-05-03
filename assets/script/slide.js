@@ -69,7 +69,7 @@ class SlideLoader {
     }
     async mainloop() {
         while ((!this.allBatchesFinished || this.slides.length > 0) & this.canProceed) {
-            if (isVisible(document.getElementById('slides-loader'))) {
+            if (this.slides.length !== 0 && isVisible(document.getElementById('slides-loader'))) {
                 this.showSlide()
             }
             await new Promise(resolve => setTimeout(resolve, 200))
