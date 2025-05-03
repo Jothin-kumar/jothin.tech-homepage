@@ -1,19 +1,21 @@
 #about-me {
     text-align: center;
     background-color: black;
-    background: url("/assets/images/bg-dot.svg") black;
 }
 #about-me-sub {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, .69);
+    margin: 10px auto;
     padding: 20px;
-    max-width: 95vw;
     width: max-content;
-    border-radius: 10px;
-    box-shadow: 0 69px 69px rgba(14, 6, 24, 0.5);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 20px;
+}
+@media screen and (orientation: portrait) {
+    #about-me-sub {
+        grid-template-columns: auto;
+        gap: 0;
+    }
 }
 #profile-pic-abt {
     color: transparent;

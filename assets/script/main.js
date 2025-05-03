@@ -1,6 +1,5 @@
 function bodyLoaded() {
     configureZoomEffect(document.getElementById("profile-pic-abt"));
-    configureZoomEffect(document.getElementById("explore-my-works-btn"));
     configureZoomEffect(document.getElementById("visit-my-blog-btn"));
     configureZoomEffect(document.getElementById("join-dc-btn"));
     configureZoomEffect(document.getElementById("connect-btn"));
@@ -8,32 +7,6 @@ function bodyLoaded() {
     for (let i = 0; i < socials.length; i++) {
         configureZoomEffect(socials[i]);
     }
-
-    // Autoscroll
-    autoscroll = setTimeout(() => {
-        scrollToMyWorks();
-    }, 5000);
-    mouseMoveDetect = () => {
-        clearTimeout(autoscroll);
-        autoscroll = setTimeout(() => {
-            scrollToMyWorks();
-        }, 5000);
-    }
-    window.addEventListener("mousemove", mouseMoveDetect);
-    window.addEventListener("scroll", () => {
-        clearTimeout(autoscroll);
-        window.removeEventListener("mousemove", mouseMoveDetect);
-    })
-    for (let i = 0; i < socials.length; i++) {
-        socials[i].addEventListener("mouseover", () => {
-            clearTimeout(autoscroll);
-            window.removeEventListener("mousemove", mouseMoveDetect);
-        });
-    }
-    document.getElementById("profile-pic-abt").addEventListener("mouseover", () => {
-        clearTimeout(autoscroll);
-        window.removeEventListener("mousemove", mouseMoveDetect);
-    });
 
     // Prevent right click.
     window.addEventListener("contextmenu", (evt) => {evt.preventDefault()});
@@ -59,10 +32,6 @@ function configureZoomEffect(elem) {
         }
         prevTimeStampl = evt.timeStamp;
     })
-}
-function scrollToMyWorks() {
-    window.scrollBoost = false;
-    document.getElementById("my-works").scrollIntoView({behavior: "smooth"});
 }
 
 window.addEventListener("keydown", (evt) => {
