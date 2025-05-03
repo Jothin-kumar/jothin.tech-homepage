@@ -1,8 +1,10 @@
 #about-me {
     text-align: center;
-    background-color: black;
+    background-color: transparent;
 }
 #about-me-sub {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
     margin: 10px auto;
     padding: 20px;
     width: max-content;
@@ -11,10 +13,16 @@
     align-items: center;
     gap: 20px;
 }
+#about-me-sub:hover {
+    background-color: rgba(255, 255, 255, 0.01);
+}
 @media screen and (orientation: portrait) {
     #about-me-sub {
         grid-template-columns: auto;
         gap: 0;
+    }
+    #about-me {
+        margin-top: 1vh !important;
     }
 }
 #profile-pic-abt {
@@ -23,14 +31,24 @@
     height: 10rem;
     border-radius: 50%;
     border: rgba(13, 0, 126, 0.3) 2px solid;
-    margin-bottom: 2vh;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+@media screen and (orientation: portrait) {
+    #profile-pic-abt {
+        width: 5rem;
+        height: 5rem;
+    }
 }
 h1 {
     color: rgb(73, 73, 2);
-    font-size: 2rem;
+    font-size: x-large;
     margin-top: 5vh;
     margin-bottom: 2vh;
+}
+@media screen and (orientation: portrait) {
+    h1 {
+        margin-top: 2vh;
+    }
 }
 #abt-me-socials {
     display: inline-grid;
@@ -40,7 +58,6 @@ h1 {
     height: fit-content;
     max-width: 75vw;
     width: 45vh;
-    margin-bottom: 2vh;
 }
 #abt-me-socials > a {
     display: inline;
@@ -56,18 +73,4 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     color: white;
-}
-.abt-btn {
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 1rem;
-    background-color: rgba(15, 23, 143, 0.1);
-    border: rgba(0, 7, 65, 0.5) 1px solid;
-    color: aliceblue;
-    margin: 10px;
-}
-.abt-btn:hover {
-    background-color: rgba(36, 143, 15, 0.1);
-    border: rgba(0, 65, 3, 0.5) 1px solid;
-    cursor: pointer;
 }

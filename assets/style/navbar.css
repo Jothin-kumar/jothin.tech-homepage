@@ -2,7 +2,7 @@
     min-width: max-content;
     width: 70vw;
     height: fit-content;
-    animation: navbar infinite 300s;
+    animation: navbar infinite 100s;
     margin: 1vh auto;
     padding: 0 10px;
     border-radius: 5vw;
@@ -11,6 +11,7 @@
     text-align: center;
     z-index: 2;
     align-items: center;
+    opacity: 0;
 }
 @keyframes navbar {
     0%, 100% {
@@ -18,14 +19,19 @@
         border: rgb(50, 85, 150) 2px solid;
     }
     50% {
-        background-color: rgba(50, 150, 85, 0.4);
-        border: rgb(20, 75, 35) 2px solid;
+        background-color: rgba(145, 50, 125, 0.4);
+        border: rgb(145, 50, 125) 2px solid;
     }
 }
 .fix-navbar {
     position: sticky;
     top: 1vh;
     width: fit-content;
+}
+@media screen and (orientation: portrait) {
+    #navbar {
+        opacity: 1 !important;
+    }
 }
 
 #navbar-tags {
@@ -46,10 +52,6 @@
 .current-navbar-tag {
     background-color: rgba(243, 143, 12, 0.1) !important;
     border: rgba(243, 143, 12, 0.5) 1px solid !important;
-}
-#navbar-tags > .navbar-tag:hover {
-    background-color: rgba(30, 240, 240, 0.1);
-    border: rgba(30, 240, 240, 0.5) 1px solid;
 }
 
 .navbar-social-logo {

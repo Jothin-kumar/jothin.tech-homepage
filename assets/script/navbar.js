@@ -1,14 +1,14 @@
-function navbarLoaded() {
-    let p = window.scrollY;
+function bodyLoadedNavbar() {
+    const abt = document.getElementById("about-me");
     const navbar = document.getElementById("navbar");
-    const handler = () => {
-        if (window.scrollY > p) { // If scrolled down
-            navbar.classList.add("scrolled-down");
+    window.addEventListener("scroll", () => {
+        const d = (window.scrollY - abt.scrollHeight / 10);
+        navbar.style.opacity = (d / abt.scrollHeight).toString();
+        if (window.scrollY >= abt.scrollHeight - (abt.scrollHeight % 5)) {
+            navbar.classList.add("fix-navbar");
         }
-        else if (window.scrollY < p) { // If scrolled up
-            navbar.classList.remove("scrolled-down");
+        else {
+            navbar.classList.remove("fix-navbar");
         }
-        p = window.scrollY;
-    }
-    window.addEventListener("scroll", handler);
+    })
 }
