@@ -10,12 +10,20 @@
     <meta property="og:image" content="/img/slides/a-maze.png">
     <link rel="icon" type="image/x-icon" href="/img/favicon.webp">
     <link rel="stylesheet" href="../../style/slide.css">
+    <link rel="stylesheet" href="../../style/loader.css">
     <script>
         window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
     </script>
 </head>
 <body class="slide">
-    <a href="https://a-maze.jothin.tech" target="_blank"><img src="/img/slides/a-maze.png" alt="A-Maze game"></a>
+    <a href="https://a-maze.jothin.tech" target="_blank;">
+        <div class="loader" class="slide-img-loader">
+            <div class="l-dot l-dot1"></div>
+            <div class="l-dot l-dot2"></div>
+            <div class="l-dot l-dot3"></div>
+        </div>
+        <img src="/img/slides/a-maze.png" alt="A-Maze game" class="slide-img" onload="this.parentElement.removeChild(this.previousElementSibling)">
+    </a>
     <div class="slide-description">
         <p>A-Maze is a maze game where you can generate, play and share mazes online for free. It is built using HTML, CSS, and JavaScript. The game allows you to create mazes of different sizes and difficulty levels, and you can also play mazes created by other users. The game features a simple and intuitive interface, making it easy to navigate and play.</p>
         <p>There are three difficulty levels: Easy, Medium, and Hard. The game also includes a timer to track your progress. Upon completing a maze, you will receive a score based on how difficult the maze is and how accurate your moves are. The score does not depend on the time taken though.</p>
