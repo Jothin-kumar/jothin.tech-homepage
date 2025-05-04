@@ -8,8 +8,7 @@
     ],
     "pages": [
         "/index.html",
-        "/404.html",
-        "/search.html"
+        "/404.html"
     ],
     "line-end": "\n"
 }
