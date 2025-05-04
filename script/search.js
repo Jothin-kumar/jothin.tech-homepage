@@ -161,6 +161,7 @@ function SearchMain() {
         if (evt.key === "/" || evt.ctrlKey && ["f", "F"].includes(evt.key)) {
             evt.preventDefault()
             input.focus()
+            input.scrollIntoView()
             input.select()
             hideSearch()
             input.style.animation = "search-focus 3s"
