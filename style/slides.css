@@ -12,7 +12,6 @@
 }
 .slide-container {
     margin: 10px 0;
-    min-height: 50dvh;
     max-width: 90dvw;
     display: flex;
     align-items: center;
