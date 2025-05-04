@@ -3,6 +3,6 @@ node_modules
 build-output
 build
 .vscode/settings.json
-slides
+/slides
 _build-config.json
 sitemap.txt
