@@ -23,6 +23,11 @@
         border: rgb(145, 50, 125) 2px solid;
     }
 }
+#navbar:focus, #navbar:focus-within, #navbar:hover {
+    animation: none;
+    background-color: rgba(50, 85, 150, 0.8);
+    border: rgb(50, 85, 150) 2px solid;
+}
 .fix-navbar {
     position: sticky;
     top: 1vh;
