@@ -1,19 +1,29 @@
 const searchBaseURL = "/slides/search.json";
 window.searchData = [];
 
+
+function declareSearchError() {
+    document.getElementById("error-loading-search").style.display = "block";
+}
+function withdrawSearchError() {
+    document.getElementById("error-loading-search").style.display = "none";
+}
 fetchSearch = async () => {
     try {
         const response = await fetch(searchBaseURL);
-        if (!response.ok) {
-            setTimeout(fetchSearch, 1000)
-        }
-        else {
+        if (response.ok) {
+            withdrawSearchError();
             response.json().then((data) =>{
                 window.searchData = data
             })
         }
+        else {
+            declareSearchError();
+            setTimeout(fetchSearch, 1000)
+        }
     }
     catch {
+        declareSearchError();
         setTimeout(fetchSearch, 1000)
     }
 }
@@ -114,9 +124,6 @@ function SearchMain() {
         input.blur();
         displaySearch();
         document.getElementById("searching-msg").innerHTML = `Searching for<br>'${query}'`;
-        if (window.searchData.length === 0) {
-            fetchSearch()
-        }
         search(query)
     }
     input.addEventListener("keydown", (evt) => {
@@ -160,6 +167,11 @@ function SearchMain() {
             setTimeout(() => {
                 input.style.animation = ""
             }, 2000)
+        }
+    })
+    input.addEventListener("focus", () => {
+        if (window.searchData.length === 0) {
+            fetchSearch()
         }
     })
 }

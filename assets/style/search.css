@@ -87,3 +87,8 @@
 .result:hover {
     background-color: rgba(0, 100, 20, .1);
 }
+#error-loading-search {
+    color: red;
+    text-align: center;
+    display: none;
+}
