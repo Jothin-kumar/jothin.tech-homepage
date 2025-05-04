@@ -1,4 +1,4 @@
-const searchBaseURL = "/slides/search.json";
+const searchBaseURL = "/search.json";
 window.searchData = [];
 
 

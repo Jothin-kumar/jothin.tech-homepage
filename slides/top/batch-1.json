@@ -1,7 +1,0 @@
-{
-    "batched-slides": [
-        "<p>I am the first slide from the second batch and my index is 0</p>",
-        "<p>I am the second slide from the second batch and my index is 1</p>",
-        "<p>I am the third slide from the second batch and my index is 2</p>"
-    ]
-}

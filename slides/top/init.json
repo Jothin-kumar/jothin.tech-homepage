@@ -1,8 +1,0 @@
-{
-    "batch-count": 2,
-    "batched-slides": [
-        "<p>I am the first slide and my index is 0</p>",
-        "<p>I am the second slide and my index is 1</p>",
-        "<p>I am the third slide and my index is 2</p>"
-    ]
-}
