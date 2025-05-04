@@ -6,8 +6,6 @@ Also generates a sitemap.txt file for the website
 import os, shutil, json, htmlmin
 
 
-os.system("python3 -m pip install -r build-requirements.txt && echo 'build requirements installed (slides-gen)'")
-
 if os.path.exists("slides"):
     shutil.rmtree("slides")
 os.mkdir("slides")
