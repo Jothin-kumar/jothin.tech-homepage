@@ -3,7 +3,10 @@ Run this file to generate slides & search.json for homepage
 Also generates a sitemap.txt file for the website
 """
 
-import os, shutil, json, bs4
+import os, shutil, json
+
+os.system("python3 -m pip install -r build-requirements.txt && echo 'build requirements installed (slides-gen)'")
+import bs4, htmlmin
 
 
 if os.path.exists("slides"):
@@ -20,6 +23,7 @@ for t in tags:
             pages.append(f"/landing/{t}/{f}")
             with open(os.path.join("landing", t, f), "r") as file:
                 content = file.read()
+                content = htmlmin.minify(content, remove_empty_space=True)
                 soup = bs4.BeautifulSoup(content, "html.parser")
                 content = soup.body.decode_contents()
             batched_slides.append(content)
