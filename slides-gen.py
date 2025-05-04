@@ -47,7 +47,7 @@ for t in tags:
 with open("sitemap.txt", "w") as sitemap:
     sitemap.write("https://jothin.tech\n")
     for page in pages:
-        sitemap.write(f"https://jothin.tech{page}" + "\n")
+        sitemap.write(f"https://jothin.tech{page}"[:-5] + "\n")
 with open("build-config.json") as b:
     data = json.load(b)
 with open("build-config.json", "w") as b:
