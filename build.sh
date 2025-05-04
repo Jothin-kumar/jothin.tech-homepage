@@ -12,7 +12,6 @@ else
 fi
     printf "git (build) ✅\n\n"
 
-apt install python3-htmlmin || true
 python3 slides-gen.py
 printf "slides-gen ✅\n\n"
 python3 build/build.py

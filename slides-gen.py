@@ -3,7 +3,7 @@ Run this file to generate slides & search.json for homepage
 Also generates a sitemap.txt file for the website
 """
 
-import os, shutil, json, htmlmin
+import os, shutil, json
 
 
 if os.path.exists("slides"):
@@ -20,8 +20,7 @@ for t in tags:
             links.append(f"https://jothin.tech/landing/{t}/{f}")
             with open(os.path.join("landing", t, f), "r") as file:
                 content = file.read()
-            minified_content = htmlmin.minify(content, remove_empty_space=True)
-            batched_slides.append(minified_content)
+            batched_slides.append(content)
     slides_per_batch = 3
     c = len(batched_slides) // slides_per_batch
     if len(batched_slides) % slides_per_batch != 0:
