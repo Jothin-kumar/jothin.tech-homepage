@@ -1,6 +1,6 @@
 #navbar {
     min-width: max-content;
-    width: 70vw;
+    max-width: 90vw;
     height: fit-content;
     animation: navbar infinite 100s;
     margin: 1vh auto;
@@ -43,7 +43,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1vw;
     width: 90%;
 }
