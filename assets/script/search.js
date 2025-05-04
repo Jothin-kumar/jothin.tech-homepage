@@ -1,4 +1,4 @@
-const searchBaseURL = "/search.json";
+const searchBaseURL = "/slides/search.json";
 window.searchData = [];
 
 fetchSearch = async () => {

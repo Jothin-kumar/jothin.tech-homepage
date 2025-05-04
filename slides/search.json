@@ -1,0 +1,59 @@
+[
+
+    {
+        "title": "Connect with Jothin Kumar",
+        "description": "View Jothin Kumar's profiles on GitHub, Discord, InstaGram, X, YouTube, Showwcase, DEV Community, Hashnode and DevDojo",
+        "url": "https://joth.in/connect"
+    },
+    {
+        "title": "GitHub Profile - Jothin Kumar",
+        "description": "@Jothin-kumar",
+        "url": "https://joth.in/gh"
+    },
+    {
+        "title": "Discord - Jothin kumar",
+        "description": "@jothinkumar",
+        "url": "https://joth.in/dc"
+    },
+
+    {
+        "title": "lines of code (archived)",
+        "description": "Lines of code is an app to calculate the number of commits, addition and deletion by a user in git",
+        "url": "https://jothin-kumar.github.io/lines-of-code"
+    },
+    {
+        "title": "Timer",
+        "description": "A simple timer that runs for 1 hour, 1 minute and 9 seconds",
+        "url": "https://sa.jothin.tech/timer"
+    },
+    {
+        "title": "Time Widget (archived)",
+        "description": "A GUI widget for Linux and Windows to show current time in different timezones",
+        "url": "https://jothin-kumar.github.io/time-widget"
+    },
+    {
+        "title": "Flames Calculator",
+        "description": "An interactive Flames Calculator to calculate FLAMES between yourself and your crush. Friends (F), Love (L), Affection (A), Marriage (M), Enemy (E), Sibling (S)",
+        "url": "https://sa.jothin.tech/flames"
+    },
+    {
+        "title": "A-Maze",
+        "description": "An interactive Maze Game on a 49x49 grid.Generate, Play, Share and Print mazes online for free",
+        "url": "https://a-maze.jothin.tech"
+    },
+    {
+        "title": "Maze collection",
+        "description": "Maze collection is a collection of mazes generated using A-Maze. Play, Share and Print mazes online for free",
+        "url": "https://mazes.jothin.tech"
+    },
+    {
+        "title": "Base Converter",
+        "description": "Convert numbers from one base to another. Available bases include Binary, Decimal, Octal, Hexadecimal... Base 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17",
+        "url": "https://sa.jothin.tech/base-converter"
+    },
+    {
+        "title": "Flip A Coin",
+        "description": "Flip A Coin Animation with HTML, CSS and JS. Randomly get Head or Tail. Click the coin to flip it",
+        "url": "https://sa.jothin.tech/flip-a-coin"
+    }
+]
