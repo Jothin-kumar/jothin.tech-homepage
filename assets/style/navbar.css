@@ -31,7 +31,6 @@
 .fix-navbar {
     position: sticky;
     top: 1vh;
-    width: fit-content;
 }
 @media screen and (orientation: portrait) {
     #navbar {
