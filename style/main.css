@@ -6,6 +6,27 @@ body {
     grid-template-rows: auto auto;
     scroll-behavior: smooth;
     margin: 0;
+    animation: bg-anim 200s linear infinite;
+}
+@keyframes bg-anim {
+    0% {
+        background-position: center center;
+    }
+    12.5% {
+        background-position: right top;
+    }
+    37.5% {
+        background-position: right bottom;
+    }
+    62.5% {
+        background-position: left top;
+    }
+    87.5% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: center center;
+    }
 }
 * {
     user-select: none;
