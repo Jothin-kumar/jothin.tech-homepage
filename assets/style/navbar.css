@@ -45,9 +45,11 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 1vw;
+    width: 90%;
 }
 .navbar-tag {
     padding: 0.5vw 1vw;
+    flex-grow: 1;
     border-radius: 5px;
     cursor: pointer;
     background-color: rgba(100, 100, 100, 0.1);
