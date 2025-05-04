@@ -3,7 +3,7 @@ Run this file to generate slides & search.json for homepage
 Also generates a sitemap.txt file for the website
 """
 
-import os, shutil, json
+import os, shutil, json, bs4
 
 
 if os.path.exists("slides"):
@@ -11,15 +11,17 @@ if os.path.exists("slides"):
 os.mkdir("slides")
 
 tags = os.listdir("landing")
-links = ["https://jothin.tech"]
+pages = []
 for t in tags:
     os.mkdir(os.path.join("slides", t))
     batched_slides = []
     for f in os.listdir(os.path.join("landing", t)):
         if f.endswith(".html"):
-            links.append(f"https://jothin.tech/landing/{t}/{f}")
+            pages.append(f"/landing/{t}/{f}")
             with open(os.path.join("landing", t, f), "r") as file:
                 content = file.read()
+                soup = bs4.BeautifulSoup(content, "html.parser")
+                content = soup.body.decode_contents()
             batched_slides.append(content)
     slides_per_batch = 3
     c = len(batched_slides) // slides_per_batch
@@ -37,6 +39,13 @@ for t in tags:
                 "batched-slides": batched_slides[:slides_per_batch]
             }, batch_file)
             del batched_slides[:slides_per_batch]
+
 with open("sitemap.txt", "w") as sitemap:
-    for link in links:
-        sitemap.write(link + "\n")
+    sitemap.write("https://jothin.tech\n")
+    for page in pages:
+        sitemap.write(f"https://jothin.tech{page}" + "\n")
+with open("build-config.json") as b:
+    data = json.load(b)
+with open("build-config.json", "w") as b:
+    data["pages"] += pages
+    json.dump(data, b)
