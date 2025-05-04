@@ -1,5 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Converter</title>
+    <meta name="description" content="Base Converter - Convert between different number systems. Base 2, 3, ..., 17 are supported.">
+    <meta property="og:title" content="Base Converter">
+    <meta property="og:description" content="Base Converter - Convert between different number systems. Base 2, 3, ..., 17 are supported.">
+    <meta property="og:image" content="/img/slides/base-converter.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.webp">
+    <link rel="stylesheet" href="../../style/slide.css">
+    <link rel="stylesheet" href="../../style/loader.css">
+    <script>
+        window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
+    </script>
 </head>
-<body>
-    Base Converter
+<body class="slide">
+    <a href="https://sa.jothin.tech/base-converter" target="_blank;">
+        <div class="loader" class="slide-img-loader">
+            <div class="l-dot l-dot1"></div>
+            <div class="l-dot l-dot2"></div>
+            <div class="l-dot l-dot3"></div>
+        </div>
+        <img src="/img/slides/base-converter.png" alt="Base Converter" class="slide-img" onload="this.parentElement.removeChild(this.previousElementSibling)">
+    </a>
+    <div class="slide-description">
+        <p>Convert numbers from one base to another. Available bases include Binary, Decimal, Octal, Hexadecimal, etc... (2 to 17)</p>
+    </div>
+    <div class="slide-links">
+        <a class="slide-link" id="slide-visit" href="https://sa.jothin.tech/base-converter" target="_blank">Visit</a>
+        <a class="slide-link" id="slide-gh-link" href="https://github.com/Jothin-kumar/base-converter" target="_blank">Source Code</a>
+    </div>
 </body>
+</html>
