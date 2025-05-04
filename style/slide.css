@@ -27,6 +27,8 @@
 }
 .slide-links {
     margin: 10px auto;
+    width: max-content;
+    text-wrap: nowrap;
     font-family: 'Courier New', Courier, monospace;
 }
 .slide-link {
