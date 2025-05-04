@@ -2,20 +2,30 @@
 ```
 jothin.tech
 +--/
-+--/search
-+--/s/
-   +--slide-1
-   +--slide-2
-   +--etc...
++--/404.html
++--/robots.txt
++--/sitemap.txt
++--/search.json
++--/landing
+   +--/top
+      +--/top-project1.html
+      +--/top-project2.html
+      +--/etc...
+   +--/blogs
+      +--/blog1.html
+      +--/blog2.html
+      +--/etc...
+   +--/others
+      +--/other1.html
+      +--/other2.html
+      +--/etc...
 ```
 
-## prod URLs
- - For slides, `https://s.jothin.tech/{id}`
- - For pinned slides, `https://s.jothin.tech/pinned`
- - For search, `https://s.jothin.tech/{search}`
-
 # Dev
+## Prerequisites
  - Install BeautifulSoup4 with `sudo apt-get install python3-bs4`
+ - Install wrangler with `npm install -g wrangler`
+## Setup
  - Clone this repository with `git clone https://github.com/Jothin-kumar/jothin.tech-homepage`
  - To build locally, execute `./build.sh`
  - To preview, use wrangler

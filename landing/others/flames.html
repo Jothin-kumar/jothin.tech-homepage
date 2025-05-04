@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Calculator</title>
+    <meta name="description" content="An interactive FLAMES calculator that predicts the relationship between two names.">
+    <meta name="keywords" content="FLAMES, calculator, love, prediction, animation, interactive, crush">
+    <meta property="og:title" content="FLAMES Calculator">
+    <meta property="og:description" content="An interactive FLAMES calculator that predicts the relationship between two names.">
+    <meta property="og:image" content="/img/slides/flames.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.webp">
+    <link rel="stylesheet" href="../../style/slide.css">
+    <link rel="stylesheet" href="../../style/loader.css">
+    <script>
+        window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
+    </script>
+</head>
+<body class="slide">
+    <a href="https://sa.jothin.tech/flames" target="_blank;">
+        <div class="loader" class="slide-img-loader">
+            <div class="l-dot l-dot1"></div>
+            <div class="l-dot l-dot2"></div>
+            <div class="l-dot l-dot3"></div>
+        </div>
+        <img src="/img/slides/flames.png" alt="FLAMES Calculator" class="slide-img" onload="this.parentElement.removeChild(this.previousElementSibling)">
+    </a>
+    <div class="slide-description">
+        <p>FLAMES is a fun game that predicts the relationship between two names. Enter two names and see the result!</p>
+        <p>FLAMES stands for Friends, Love, Affection, Marriage, Enemy, Sister. The game uses the letters in the names to determine the relationship.</p>
+        <p>This FLAMES Calculator is interactive and animates each step. However, you can skip the animation if you lack the patience :D</p>
+    </div>
+    <div class="slide-links">
+        <a class="slide-link" id="slide-visit" href="https://sa.jothin.tech/flames" target="_blank">Play Now</a>
+        <a class="slide-link" id="slide-gh-link" href="https://github.com/Jothin-kumar/flames" target="_blank">Source Code</a>
+    </div>
+</body>
+</html>

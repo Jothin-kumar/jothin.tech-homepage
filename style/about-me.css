@@ -1,0 +1,77 @@
+#about-me {
+    text-align: center;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+}
+#about-me-sub {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 20px;
+    width: max-content;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 20px;
+}
+#about-me-sub:hover {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+@media screen and (orientation: portrait) {
+    #about-me-sub {
+        grid-template-columns: auto;
+        gap: 0;
+    }
+    #about-me {
+        margin-top: 1vh !important;
+    }
+}
+#profile-pic-abt {
+    color: transparent;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: rgba(13, 0, 126, 0.3) 2px solid;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+@media screen and (orientation: portrait) {
+    #profile-pic-abt {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+h1 {
+    color: rgb(73, 73, 2);
+    font-size: x-large;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+}
+@media screen and (orientation: portrait) {
+    h1 {
+        margin-top: 2vh;
+    }
+}
+#abt-me-socials {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    background-color: rgba(10, 10, 0, 0.1);
+    border-radius: 50px;
+    height: fit-content;
+    max-width: 75vw;
+    width: 45vh;
+}
+#abt-me-socials > a {
+    display: inline;
+    background-color: black;
+    height: 5vh;
+    width: 5vh;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.abt-me-social-logo {
+    background-color: black;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}

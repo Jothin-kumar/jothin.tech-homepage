@@ -1,0 +1,35 @@
+.loader {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+}
+.l-dot {
+    margin-right: 0.5px;
+    margin-left: 0.5px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    display: inline-block;
+    animation: loader-dot 2s infinite;
+}
+@keyframes loader-dot {
+    0%, 100% {
+        scale: 1;
+    }
+    75% {
+        scale: 0.69;
+    }
+}
+.l-dot1 {
+    background-color: rgb(233, 132, 220);
+}
+.l-dot2 {
+    background-color: rgb(132, 233, 132);
+    animation-delay: 400ms;
+}
+.l-dot3 {
+    background-color: rgb(132, 132, 233);
+    animation-delay: 800ms;
+}

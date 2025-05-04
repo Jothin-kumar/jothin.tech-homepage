@@ -1,0 +1,27 @@
+#error-loading-slide {
+    color: red;
+    text-align: center;
+    display: none;
+}
+
+#slides-here > div {
+    display: none;
+}
+#slides-here > div.current-slides-tag {
+    display: block;
+}
+.slide-container {
+    margin: 10px 0;
+    max-width: 90dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+.slide {
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.31);
+}
+.slide:hover {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}

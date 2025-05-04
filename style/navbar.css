@@ -1,0 +1,120 @@
+#navbar {
+    min-width: max-content;
+    max-width: 90vw;
+    height: fit-content;
+    animation: navbar infinite 100s;
+    margin: 1vh auto;
+    padding: 0 10px;
+    border-radius: 5vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    z-index: 2;
+    align-items: center;
+    opacity: 0;
+}
+@keyframes navbar {
+    0%, 100% {
+        background-color: rgba(50, 85, 150, 0.4);
+        border: rgb(50, 85, 150) 2px solid;
+    }
+    50% {
+        background-color: rgba(145, 50, 125, 0.4);
+        border: rgb(145, 50, 125) 2px solid;
+    }
+}
+#navbar:focus, #navbar:focus-within, #navbar:hover {
+    animation: none;
+    background-color: rgba(50, 85, 150, 0.8);
+    border: rgb(50, 85, 150) 2px solid;
+}
+.fix-navbar {
+    position: sticky;
+    top: 1vh;
+}
+@media screen and (orientation: portrait) {
+    #navbar {
+        opacity: 1 !important;
+    }
+}
+
+#navbar-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1vw;
+    width: 90%;
+}
+.navbar-tag {
+    padding: 0.5vw 1vw;
+    flex-grow: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(100, 100, 100, 0.1);
+    border: rgba(100, 100, 100, 0.5) 1px solid;
+    font-size: large;
+}
+.current-navbar-tag {
+    background-color: rgba(243, 143, 12, 0.1) !important;
+    border: rgba(243, 143, 12, 0.5) 1px solid !important;
+}
+
+.navbar-social-logo {
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+@media screen and (orientation: portrait) {
+    #navbar {
+        width: 90vw;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto auto auto;
+    }
+    #navbar-search {
+        width: 85vw;
+        margin: auto;
+    }
+    #navbar-socials {
+        display: none;
+    }
+    #navbar-tags {
+        margin: 10px auto;
+    }
+}
+
+#navbar-search {
+    display: flex;
+    align-items: center;
+}
+#navbar-search > * {
+    border: 0;
+    background-color: rgba(150, 150, 150, 0.1);
+    border-radius: 5px;
+}
+#navbar-search > input {
+    color: white;
+    font-size: large;
+    padding: 10px;
+    margin: 10px;
+    flex-grow: 1;
+}
+@keyframes search-focus {
+    0%, 50% {
+        background-color: black;
+    }
+    25%, 100% {
+        background-color: transparent;
+    }
+}
+#navbar-search > input::placeholder {
+    color: white;
+}
+#navbar-search > input::selection {
+    background-color: black;
+}
+#search-go-btn {
+    color: white;
+    cursor: pointer;
+    font-size: x-large;
+}

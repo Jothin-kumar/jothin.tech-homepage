@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <meta name="description" content="Simple timer app with HTML, CSS and JavaScript.">
+    <meta property="og:title" content="Timer">
+    <meta property="og:description" content="Simple timer app with HTML, CSS and JavaScript.">
+    <meta property="og:image" content="/img/slides/timer.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.webp">
+    <link rel="stylesheet" href="../../style/slide.css">
+    <link rel="stylesheet" href="../../style/loader.css">
+    <script>
+        window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
+    </script>
+</head>
+<body class="slide">
+    <a href="https://sa.jothin.tech/timer/" target="_blank;">
+        <div class="loader" class="slide-img-loader">
+            <div class="l-dot l-dot1"></div>
+            <div class="l-dot l-dot2"></div>
+            <div class="l-dot l-dot3"></div>
+        </div>
+        <img src="/img/slides/timer.png" alt="Timer" class="slide-img" onload="this.parentElement.removeChild(this.previousElementSibling)">
+    </a>
+    <div class="slide-description">
+        <p>A simple timer that runs for 1 hour, 1 minute and 9 seconds</p>
+    </div>
+    <div class="slide-links">
+        <a class="slide-link" id="slide-visit" href="https://sa.jothin.tech/timer/" target="_blank">Visit</a>
+        <a class="slide-link" id="slide-gh-link" href="https://github.com/Jothin-kumar/timer" target="_blank">Source Code</a>
+    </div>
+</body>
+</html>
