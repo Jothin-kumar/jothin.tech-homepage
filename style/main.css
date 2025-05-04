@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    background: url("/assets/images/bg-dot.svg") black;
+    background: url("/img/bg-dot.svg") black;
     color: white;
     display: grid;
     grid-template-rows: auto auto;

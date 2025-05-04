@@ -1,5 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Maze: Play maze game online</title>
+    <meta name="description" content="Generate / Create, Play and Share mazes online for free.">
+    <meta property="og:title" content="A-Maze: Play maze game online">
+    <meta property="og:description" content="Generate / Create, Play and Share mazes online for free.">
+    <meta property="og:image" content="/img/a-maze.png">
+    <link rel="icon" type="image/x-icon" href="/img/slides/a-maze.png">
+    <script>
+        window.addEventListener("contextmenu", (evt) => {evt.preventDefault()}); // no right click
+    </script>
 </head>
 <body>
-    This is A-Maze
+    <h2>A-Maze</h2>
+    <a href="https://a-maze.jothin.tech" target="_blank"><img src="/img/slides/a-maze.png" alt="A-Maze game"></a>
+    <div id="description">
+        Hello
+    </div>
+    <div class="links">
+        <a class="link" id="visit" href="https://a-maze.jothin.tech" target="_blank">Visit</a>
+        <a class="link" id="gh-link" href="https://github.com/jothin-kumar/a-maze" target="_blank">GitHub</a>
+    </div>
+
+    <style>
+        * {
+            user-select: none;
+        }
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        h2 {
+            text-align: center;
+            padding: 10px;
+        }
+        img {
+            max-width: 50vw;
+            max-height: 50vh;
+        }
+        img:hover {
+            transform: scale(1.05);
+            transition: all 0.5s ease-in-out;
+        }
+        .links {
+            margin: 10px auto;
+        }
+        .link {
+            margin: auto 5px;
+            border: white 1px solid;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            color: white !important;
+            text-decoration: none;
+        }
+        .link:hover {
+            background-color: rgba(0, 9, 128, .25);
+        }
+        #description li {
+            width: fit-content;
+        }
+        #description a {
+            color: olive;
+        }
+        #description a:visited {
+            color: olivedrab;
+        }
+    </style>
 </body>
+</html>

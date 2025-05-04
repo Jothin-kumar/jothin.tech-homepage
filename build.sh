@@ -16,7 +16,7 @@ python3 slides-gen.py
 printf "slides-gen ✅\n\n"
 python3 build/build.py
 printf "build.py ✅\n\n"
-cp -r assets/images build-output/img
+cp -r img build-output/img
 printf "copy images ✅\n\n"
 cp -r slides build-output/slides
 printf "copy slides ✅\n\n"
