@@ -4,9 +4,6 @@
     display: none;
 }
 
-#slides-parent {
-    min-height: 100dvh;
-}
 #slides-here > div {
     display: none;
 }
