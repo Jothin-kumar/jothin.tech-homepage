@@ -58,9 +58,9 @@
         <div id="my-works">
             <nav id="navbar">
                 <div id="navbar-tags">
-                    <div slide-tag-name="top" class="navbar-tag current-navbar-tag">Top</div>
-                    <div slide-tag-name="blogs" class="navbar-tag">Blogs</div>
-                    <div slide-tag-name="others" class="navbar-tag">Others</div>
+                    <div id="navbar-tag-top" slide-tag-name="top" class="navbar-tag current-navbar-tag">Top</div>
+                    <div id="navbar-tag-blogs" slide-tag-name="blogs" class="navbar-tag">Blogs</div>
+                    <div id="navbar-tag-others" slide-tag-name="others" class="navbar-tag">Others</div>
                 </div>
                 <div id="navbar-search">
                     <input placeholder="Search ( / )" spellcheck="false" id="navbar-search-input" maxlength="25">
@@ -88,7 +88,9 @@
                 </div>
             </div>
         </div>
-        <footer id="main-footer"></footer>
+        <footer id="main-footer">
+            <p>Scroll past to switch tags</p>
+        </footer>
         <div id="search-parent">
             <div id="search">
                 <div class="loader" id="search-loader">
@@ -118,9 +120,10 @@
         <script src="script/helper.js"></script>
         <script src="script/main.js"></script>
         <script src="script/navbar.js"></script>
-        <script src="script/abt.js"></script>
+        <script src="script/align.js"></script>
         <script src="script/slide.js"></script>
         <script src="script/tooltip.js"></script>
         <script src="script/search.js"></script>
+        <script src="script/scroll-handle.js"></script>
     </body>
 </html>
