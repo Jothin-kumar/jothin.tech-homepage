@@ -44,12 +44,14 @@ async function getJSON(url, slideLoader) {
 }
 
 class SlideLoader {
-    constructor(tag) {
+    constructor(tag, focusnav=true) {
         withdrawError()
         showLoading()
         this.tag = tag
         this.initialise()
         this.canProceed = true
+        this.firstSlideShown = false
+        this.focusnav = focusnav
     }
     async initialise() {
         const initSlidesData = await getJSON(`/slides/${this.tag}/init.json`, this)
@@ -69,8 +71,16 @@ class SlideLoader {
     }
     async mainloop() {
         while ((!this.allBatchesFinished || this.slides.length > 0) & this.canProceed) {
-            if (this.slides.length !== 0 && isVisible(document.getElementById('slides-loader'))) {
+            const sl = document.getElementById('slides-loader')
+            if (this.slides.length !== 0 && (isVisible(sl) || isScrolledPast(sl))) {
                 this.showSlide()
+                if (!this.firstSlideShown) {
+                    this.firstSlideShown = true
+                    if (this.focusnav) {
+                        document.getElementById("my-works").scrollIntoView({block: "start"});
+                        document.getElementById("slides-parent").scrollIntoView({block: "start"})
+                    }
+                }
             }
             await new Promise(resolve => setTimeout(resolve, 200))
         }
@@ -87,4 +97,4 @@ class SlideLoader {
         document.getElementById(`slides-here-tag-${this.tag}`).innerHTML = ""
     }
 }
-window.currentSlideLoader = new SlideLoader("top")
+window.currentSlideLoader = new SlideLoader("top", false)
