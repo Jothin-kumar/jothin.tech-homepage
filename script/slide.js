@@ -77,8 +77,8 @@ class SlideLoader {
                 if (!this.firstSlideShown) {
                     this.firstSlideShown = true
                     if (this.focusnav) {
-                        document.getElementById("my-works").scrollIntoView({block: "start"});
-                        document.getElementById("slides-parent").scrollIntoView({block: "start"})
+                        document.getElementById("my-works").scrollIntoView({behavior: "smooth", block: "start"});
+                        document.getElementById("slides-parent").scrollIntoView({behavior: "smooth", block: "start"})
                     }
                 }
             }
