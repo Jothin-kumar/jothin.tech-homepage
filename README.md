@@ -24,6 +24,7 @@ jothin.tech
 # Dev
 ## Prerequisites
  - Install BeautifulSoup4 with `sudo apt-get install python3-bs4`
+ - Install htmlmin with `sudo apt-get install python3-htmlmin`
  - Install wrangler with `npm install -g wrangler`
 ## Setup
  - Clone this repository with `git clone https://github.com/Jothin-kumar/jothin.tech-homepage`
