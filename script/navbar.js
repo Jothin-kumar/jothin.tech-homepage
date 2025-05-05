@@ -14,15 +14,8 @@ window.addEventListener("scroll", () => {
 function navbarMain() {
     Array.from(document.getElementById("navbar-tags").children).forEach(element => {
         element.addEventListener("click", () => {
-            document.querySelectorAll(".current-navbar-tag")[0].classList.remove("current-navbar-tag");
-            document.querySelectorAll(".current-slides-tag")[0].classList.remove("current-slides-tag");
-            element.classList.add("current-navbar-tag");
             const tag = element.getAttribute("slide-tag-name");
-            const slidesContainer = document.getElementById("slides-here-tag-" + tag);
-            slidesContainer.classList.add("current-slides-tag");
-
-            window.currentSlideLoader.terminate();
-            window.currentSlideLoader = new SlideLoader(tag);
+            toSlidesTag(tag);
         });
     });
 }
