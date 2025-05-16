@@ -2,7 +2,14 @@ const abt = document.getElementById("about-me");
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
     const d = (window.scrollY - abt.scrollHeight / 10);
-    navbar.style.opacity = (d / abt.scrollHeight).toString();
+    const c = d / abt.scrollHeight
+    navbar.style.opacity = c.toString();
+    if (c < .1) {
+        navbar.classList.add("disabled-navbar");
+    }
+    else {
+        navbar.classList.remove("disabled-navbar");
+    }
     if (window.scrollY >= abt.scrollHeight - (abt.scrollHeight % 5)) {
         navbar.classList.add("fix-navbar");
     }

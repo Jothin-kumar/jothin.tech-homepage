@@ -13,6 +13,9 @@
     align-items: center;
     opacity: 0;
 }
+#navbar.disabled-navbar {
+    pointer-events: none;
+}
 @keyframes navbar {
     0%, 100% {
         background-color: rgba(50, 85, 150, 0.4);
