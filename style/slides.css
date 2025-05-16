@@ -11,12 +11,12 @@
     display: block;
 }
 .slide-container {
-    margin: 10px 0;
     max-width: 90dvw;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
+    padding-top: 10dvh;
 }
 .slide {
     border-radius: 10px;
