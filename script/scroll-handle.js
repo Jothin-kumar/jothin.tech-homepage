@@ -1,6 +1,6 @@
 function scrollHandler() {    
     if (!window.currentSlideLoader.allBatchesFinished) return
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) { // If scrolled to bottom
+    if ((window.innerHeight*1.1 + window.pageYOffset) >= document.body.offsetHeight) { // If almost scrolled to bottom
         const tags = ["top", "blogs", "others"]
         function getNextNeighbour(tag) {
             const index = tags.indexOf(tag)
